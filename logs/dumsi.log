@@ -1,0 +1,741 @@
+2025-04-09 18:40:18,979 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:40:18,983 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:40:19,007 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:40:19,007 - dumsi - ERROR - Failed to initialize AudioListener: 'whisper_model_size'
+2025-04-09 18:40:19,009 - dumsi - INFO - Using Nepali language processor
+2025-04-09 18:40:19,010 - dumsi.speaker - INFO - Initialized Speaker with espeak engine for language: ne
+2025-04-09 18:40:19,366 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:40:19,366 - dumsi - INFO - Speaker initialized
+2025-04-09 18:40:19,366 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:40:19,366 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:40:19,366 - dumsi - ERROR - One or more critical components failed to initialize
+2025-04-09 18:40:48,776 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:40:48,779 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:40:48,803 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:40:48,803 - dumsi - ERROR - Failed to initialize AudioListener: 'whisper_model_size'
+2025-04-09 18:40:48,805 - dumsi - INFO - Using Nepali language processor
+2025-04-09 18:40:48,805 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: ne
+2025-04-09 18:40:49,162 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:40:49,162 - dumsi - INFO - Speaker initialized
+2025-04-09 18:40:49,162 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:40:49,162 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:40:49,162 - dumsi - ERROR - One or more critical components failed to initialize
+2025-04-09 18:41:14,722 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:41:14,726 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:41:14,748 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:41:14,748 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:41:14,748 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:41:15,474 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:41:15,475 - dumsi - INFO - Using English language processor
+2025-04-09 18:41:15,475 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:41:15,905 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:41:15,906 - dumsi - INFO - Speaker initialized
+2025-04-09 18:41:15,906 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:41:15,906 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:41:22,267 - dumsi - INFO - Greeting completed
+2025-04-09 18:41:22,268 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:41:22,268 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:41:22,268 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:41:36,655 - dumsi - INFO - Recognized: hello hay
+2025-04-09 18:41:36,691 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 18:41:44,662 - dumsi - INFO - Recognized: how can I help you today
+2025-04-09 18:41:44,672 - dumsi.processor - INFO - Intent: info, Response: {'intent': 'info', 'action': None, 'speech': "I'm Dumsi, a voice-controlled robot. You can ask me to move in different directions or tell me to stop."}
+2025-04-09 18:41:58,832 - dumsi - INFO - Recognized: move forward
+2025-04-09 18:41:58,840 - dumsi.processor - INFO - Intent: move, Response: {'intent': 'move', 'action': 'move_forward', 'speech': 'Moving forward'}
+2025-04-09 18:41:58,840 - dumsi.controller - INFO - Executing action: move_forward
+2025-04-09 18:41:58,840 - dumsi.controller - INFO - Simulating: Moving forward
+2025-04-09 18:42:07,993 - dumsi - INFO - Recognized: stop
+2025-04-09 18:42:08,002 - dumsi.processor - INFO - Intent: stop, Response: {'intent': 'stop', 'action': 'stop', 'speech': 'Stopping now'}
+2025-04-09 18:42:08,003 - dumsi.controller - INFO - Executing action: stop
+2025-04-09 18:42:08,003 - dumsi.controller - INFO - Simulating: Stopping
+2025-04-09 18:42:27,161 - dumsi - INFO - Recognized: start
+2025-04-09 18:42:27,168 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:42:36,538 - dumsi - INFO - Recognized: is
+2025-04-09 18:42:36,547 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:42:47,277 - dumsi - INFO - Recognized: as I told you
+2025-04-09 18:42:47,285 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:43:16,807 - dumsi - INFO - Recognized: hello dummy program
+2025-04-09 18:43:16,817 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 18:43:27,832 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:45:14,465 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:45:14,469 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:45:14,493 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:45:15,115 - dumsi.listener - INFO - Initialized AudioListener with vosk engine
+2025-04-09 18:45:15,115 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:45:15,117 - dumsi - INFO - Using Nepali language processor
+2025-04-09 18:45:15,117 - dumsi.speaker - INFO - Initialized Speaker with espeak engine for language: ne
+2025-04-09 18:45:15,884 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:45:15,884 - dumsi - INFO - Speaker initialized
+2025-04-09 18:45:15,884 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:45:15,884 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:45:23,522 - dumsi - INFO - Greeting completed
+2025-04-09 18:45:23,523 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:45:23,523 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:45:23,523 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:45:30,543 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:45:35,937 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:45:35,940 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:45:35,965 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:45:35,965 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:45:35,965 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:45:36,624 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:45:36,626 - dumsi - INFO - Using English language processor
+2025-04-09 18:45:36,626 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:45:37,128 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:45:37,128 - dumsi - INFO - Speaker initialized
+2025-04-09 18:45:37,128 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:45:37,129 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:45:43,875 - dumsi - INFO - Greeting completed
+2025-04-09 18:45:43,876 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:45:43,876 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:45:43,876 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:45:51,205 - dumsi - INFO - Recognized: sorry
+2025-04-09 18:45:51,213 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:46:00,833 - dumsi - INFO - Recognized: move forward
+2025-04-09 18:46:00,886 - dumsi.processor - INFO - Intent: move, Response: {'intent': 'move', 'action': 'move_forward', 'speech': 'Moving forward'}
+2025-04-09 18:46:00,887 - dumsi.controller - INFO - Executing action: move_forward
+2025-04-09 18:46:00,887 - dumsi.controller - INFO - Simulating: Moving forward
+2025-04-09 18:46:08,521 - dumsi - INFO - Recognized: stop
+2025-04-09 18:46:08,530 - dumsi.processor - INFO - Intent: stop, Response: {'intent': 'stop', 'action': 'stop', 'speech': 'Stopping now'}
+2025-04-09 18:46:08,530 - dumsi.controller - INFO - Executing action: stop
+2025-04-09 18:46:08,531 - dumsi.controller - INFO - Simulating: Stopping
+2025-04-09 18:46:34,743 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:54:42,399 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:54:42,402 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:54:42,424 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:54:42,424 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:54:42,424 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:54:43,086 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:54:43,088 - dumsi - INFO - Using English language processor
+2025-04-09 18:54:43,088 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:54:43,728 - dumsi.speaker - ERROR - TTS test failed: [Errno 2] No such file or directory: 'ffprobe'
+2025-04-09 18:54:43,728 - dumsi - INFO - Speaker initialized
+2025-04-09 18:54:43,728 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:54:43,728 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:54:44,699 - dumsi.speaker - ERROR - Error generating speech: [Errno 2] No such file or directory: 'ffprobe'
+2025-04-09 18:54:44,700 - dumsi - INFO - Greeting completed
+2025-04-09 18:54:44,700 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:54:44,700 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:54:44,700 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:54:49,145 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:55:15,284 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:55:15,288 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:55:15,314 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:55:15,314 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:55:15,315 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:55:15,993 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:55:15,994 - dumsi - INFO - Using English language processor
+2025-04-09 18:55:15,994 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:55:16,489 - dumsi.speaker - ERROR - TTS test failed: [Errno 2] No such file or directory: 'ffprobe'
+2025-04-09 18:55:16,489 - dumsi - INFO - Speaker initialized
+2025-04-09 18:55:16,490 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:55:16,490 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:55:17,313 - dumsi.speaker - ERROR - Error generating speech: [Errno 2] No such file or directory: 'ffprobe'
+2025-04-09 18:55:17,314 - dumsi - INFO - Greeting completed
+2025-04-09 18:55:17,314 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:55:17,314 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:55:17,314 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:55:43,035 - dumsi - INFO - Recognized: best Colony
+2025-04-09 18:55:43,046 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:55:43,418 - dumsi.speaker - ERROR - Error generating speech: [Errno 2] No such file or directory: 'ffprobe'
+2025-04-09 18:55:43,419 - dumsi - ERROR - Failed to speak response
+2025-04-09 18:56:41,147 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:57:02,772 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:57:02,775 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:57:02,800 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:57:02,800 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:57:02,801 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:57:03,462 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:57:03,464 - dumsi - INFO - Using English language processor
+2025-04-09 18:57:03,464 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:57:03,750 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:57:03,750 - dumsi - INFO - Speaker initialized
+2025-04-09 18:57:03,750 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:57:03,750 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:57:09,596 - dumsi - INFO - Greeting completed
+2025-04-09 18:57:09,596 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:57:09,597 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:57:09,597 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:57:14,672 - dumsi - INFO - Recognized: no I don't need your help
+2025-04-09 18:57:14,684 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:57:37,908 - dumsi - INFO - Recognized: Khajuri faster
+2025-04-09 18:57:37,954 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:58:02,002 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:58:04,706 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:58:04,710 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:58:04,734 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:58:04,734 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:58:04,734 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:58:05,482 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:58:05,484 - dumsi - INFO - Using English language processor
+2025-04-09 18:58:05,484 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:58:05,801 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:58:05,801 - dumsi - INFO - Speaker initialized
+2025-04-09 18:58:05,801 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:58:05,801 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:58:11,668 - dumsi - INFO - Greeting completed
+2025-04-09 18:58:11,669 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:58:11,669 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:58:11,669 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:58:24,986 - dumsi - INFO - Recognized: hi hello
+2025-04-09 18:58:24,994 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 18:58:49,618 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 18:58:51,077 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 18:58:51,080 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 18:58:51,105 - dumsi - INFO - Audio mixer initialized
+2025-04-09 18:58:51,105 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 18:58:51,105 - dumsi - INFO - Audio listener initialized
+2025-04-09 18:58:51,769 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 18:58:51,770 - dumsi - INFO - Using English language processor
+2025-04-09 18:58:51,771 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: en
+2025-04-09 18:58:52,081 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 18:58:52,102 - dumsi - INFO - Speaker initialized
+2025-04-09 18:58:52,102 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 18:58:52,102 - dumsi - INFO - Robot controller initialized
+2025-04-09 18:58:59,051 - dumsi - INFO - Greeting completed
+2025-04-09 18:58:59,051 - dumsi - INFO - All components initialized successfully
+2025-04-09 18:58:59,052 - dumsi - INFO - Calibrating microphone for ambient noise...
+2025-04-09 18:58:59,052 - dumsi - ERROR - Error calibrating microphone: 'AudioListener' object has no attribute 'adjust_for_ambient_noise'
+2025-04-09 18:59:21,230 - dumsi - INFO - Recognized: Nepali English purana wala gana
+2025-04-09 18:59:21,241 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:59:46,633 - dumsi - INFO - Recognized: Kesari full style name
+2025-04-09 18:59:46,729 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 18:59:57,197 - dumsi - INFO - Recognized: would you refresh that
+2025-04-09 18:59:57,207 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:00:40,532 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:00:42,196 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:00:42,199 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:00:42,199 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:00:42,846 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:00:42,869 - dumsi.speaker - INFO - Mixer initialized
+2025-04-09 19:00:42,869 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine for language: ne
+2025-04-09 19:00:43,254 - dumsi.speaker - INFO - TTS test successful
+2025-04-09 19:00:43,302 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:00:43,350 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:00:56,539 - dumsi - INFO - Recognized: hello hello are you listening are you listening to me
+2025-04-09 19:00:56,549 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:01:08,430 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:01:09,974 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:01:09,977 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:01:09,978 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:01:10,633 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:01:10,754 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:01:10,754 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:01:10,755 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:01:17,503 - dumsi - INFO - Recognized: 
+2025-04-09 19:01:21,458 - dumsi - INFO - Recognized: 
+2025-04-09 19:01:26,510 - dumsi - INFO - Recognized: Vidushi
+2025-04-09 19:01:26,522 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:01:31,709 - dumsi - INFO - Recognized: 
+2025-04-09 19:01:34,356 - dumsi - INFO - Recognized: 
+2025-04-09 19:01:35,658 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:01:37,322 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:01:37,323 - dumsi - ERROR - Error in main loop: expected '<document start>', but found '<scalar>'
+  in "config/settings.yaml", line 1, column 3
+2025-04-09 19:01:40,864 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:01:40,865 - dumsi - ERROR - Error in main loop: expected '<document start>', but found '<scalar>'
+  in "config/settings.yaml", line 1, column 3
+2025-04-09 19:01:56,969 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:01:56,972 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:01:56,972 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:01:57,619 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:01:57,730 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:01:57,731 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:01:57,731 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:02:11,549 - dumsi - INFO - Recognized: hello hello
+2025-04-09 19:02:11,559 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:02:17,290 - dumsi - INFO - Recognized: 
+2025-04-09 19:02:22,235 - dumsi - INFO - Recognized: 
+2025-04-09 19:02:25,918 - dumsi - INFO - Recognized: 
+2025-04-09 19:02:30,751 - dumsi - INFO - Recognized: 
+2025-04-09 19:02:46,497 - dumsi - INFO - Recognized: 
+2025-04-09 19:02:49,343 - dumsi - INFO - Recognized: 
+2025-04-09 19:02:57,641 - dumsi - INFO - Recognized: along with one specific problem
+2025-04-09 19:02:57,649 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:03:02,908 - dumsi - INFO - Recognized: 
+2025-04-09 19:03:08,898 - dumsi - INFO - Recognized: 
+2025-04-09 19:03:26,941 - dumsi - INFO - Recognized: say hello hello hey
+2025-04-09 19:03:26,949 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:03:32,552 - dumsi - INFO - Recognized: 
+2025-04-09 19:03:40,022 - dumsi - INFO - Recognized: 
+2025-04-09 19:03:52,221 - dumsi - INFO - Recognized: good boy
+2025-04-09 19:03:52,229 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:03:57,647 - dumsi - INFO - Recognized: 
+2025-04-09 19:04:03,705 - dumsi - INFO - Recognized: 
+2025-04-09 19:04:07,741 - dumsi - INFO - Recognized: 
+2025-04-09 19:04:10,584 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:09:31,756 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:09:31,760 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:09:31,761 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:09:33,531 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:09:33,537 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:09:33,669 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:09:33,671 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:09:33,672 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:09:39,070 - dumsi - INFO - Recognized: 
+2025-04-09 19:09:47,568 - dumsi - INFO - Recognized: 
+2025-04-09 19:09:50,686 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:09:52,262 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:09:52,265 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:09:52,265 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:09:52,996 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:09:52,997 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:09:53,110 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:09:53,111 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:09:53,111 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:09:56,197 - dumsi - INFO - Recognized: hello
+2025-04-09 19:09:56,207 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:10:01,986 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:06,368 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:10,323 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:14,630 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:19,427 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:32,830 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:46,875 - dumsi - INFO - Recognized: 
+2025-04-09 19:10:50,393 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:00,943 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:08,277 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:13,983 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:20,336 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:44,407 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:50,929 - dumsi - INFO - Recognized: 
+2025-04-09 19:11:55,447 - dumsi - INFO - Recognized: 
+2025-04-09 19:12:03,040 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:12:04,746 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:12:04,750 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:12:04,751 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:12:05,508 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:12:05,509 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:12:05,622 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:12:05,623 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:12:05,623 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:12:19,312 - dumsi - INFO - Recognized: hello hello
+2025-04-09 19:12:19,336 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:12:25,146 - dumsi - INFO - Recognized: 
+2025-04-09 19:12:33,217 - dumsi - INFO - Recognized: 
+2025-04-09 19:12:39,128 - dumsi - INFO - Recognized: 
+2025-04-09 19:12:42,005 - dumsi - INFO - Recognized: 
+2025-04-09 19:12:45,424 - dumsi - INFO - Recognized: 
+2025-04-09 19:12:56,034 - dumsi - INFO - Recognized: 
+2025-04-09 19:13:01,251 - dumsi - INFO - Recognized: 
+2025-04-09 19:13:09,561 - dumsi - INFO - Recognized: 
+2025-04-09 19:13:17,694 - dumsi - INFO - Recognized: Rakshabandhan
+2025-04-09 19:13:17,705 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:13:23,006 - dumsi - INFO - Recognized: 
+2025-04-09 19:13:26,665 - dumsi - INFO - Recognized: 
+2025-04-09 19:13:29,683 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:13:31,557 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:13:31,560 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:13:31,560 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:13:31,561 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:13:32,249 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:13:32,250 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:13:32,362 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:13:32,362 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:13:32,362 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:13:42,308 - dumsi - INFO - Recognized: 
+2025-04-09 19:13:47,100 - dumsi - INFO - Recognized: hi hello
+2025-04-09 19:13:47,110 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:13:53,208 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:00,697 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:03,841 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:20,594 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:28,539 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:33,747 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:39,962 - dumsi - INFO - Recognized: 
+2025-04-09 19:14:50,978 - dumsi - INFO - Recognized: production
+2025-04-09 19:14:50,987 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:14:55,643 - dumsi - INFO - Recognized: 
+2025-04-09 19:15:06,159 - dumsi - INFO - Recognized: 
+2025-04-09 19:15:12,320 - dumsi - INFO - Recognized: 
+2025-04-09 19:15:24,213 - dumsi - INFO - Recognized: 
+2025-04-09 19:15:37,325 - dumsi - INFO - Recognized: 
+2025-04-09 19:15:46,248 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:03,942 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:12,439 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:16,644 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:21,175 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:28,125 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:32,894 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:38,920 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:41,682 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:52,346 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:55,484 - dumsi - INFO - Recognized: 
+2025-04-09 19:16:59,574 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:03,343 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:17,602 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:23,767 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:29,562 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:37,107 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:40,442 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:43,475 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:47,436 - dumsi - INFO - Recognized: 
+2025-04-09 19:17:51,582 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:06,355 - dumsi - INFO - Recognized: 18:00 Baje wala
+2025-04-09 19:18:06,362 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:18:11,395 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:14,889 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:20,076 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:24,580 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:34,125 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:48,265 - dumsi - INFO - Recognized: input output
+2025-04-09 19:18:48,276 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:18:51,658 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:54,959 - dumsi - INFO - Recognized: 
+2025-04-09 19:18:58,863 - dumsi - INFO - Recognized: 
+2025-04-09 19:19:13,732 - dumsi - INFO - Recognized: 
+2025-04-09 19:19:18,908 - dumsi - INFO - Recognized: 
+2025-04-09 19:19:23,353 - dumsi - INFO - Recognized: 
+2025-04-09 19:19:38,155 - dumsi - INFO - Recognized: 
+2025-04-09 19:19:44,568 - dumsi - INFO - Recognized: 345
+2025-04-09 19:19:44,615 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:19:51,286 - dumsi - INFO - Recognized: 
+2025-04-09 19:20:03,530 - dumsi - INFO - Recognized: 
+2025-04-09 19:20:07,129 - dumsi - INFO - Recognized: 
+2025-04-09 19:20:23,261 - dumsi - INFO - Recognized: 
+2025-04-09 19:20:33,411 - dumsi - INFO - Recognized: 
+2025-04-09 19:20:38,251 - dumsi - INFO - Recognized: 
+2025-04-09 19:20:52,096 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:00,897 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:08,592 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:13,251 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:18,998 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:24,462 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:35,713 - dumsi - INFO - Recognized: YouTube MP3 download Flipkart
+2025-04-09 19:21:35,721 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:21:40,748 - dumsi - INFO - Recognized: 
+2025-04-09 19:21:47,992 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:03,424 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:07,228 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:10,875 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:16,611 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:27,121 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:39,143 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:49,695 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:53,999 - dumsi - INFO - Recognized: 
+2025-04-09 19:22:57,842 - dumsi - INFO - Recognized: 
+2025-04-09 19:23:14,268 - dumsi - INFO - Recognized: 494
+2025-04-09 19:23:14,279 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:23:17,947 - dumsi - INFO - Recognized: 
+2025-04-09 19:23:32,115 - dumsi - INFO - Recognized: MP3 video
+2025-04-09 19:23:32,123 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:23:37,403 - dumsi - INFO - Recognized: 
+2025-04-09 19:23:46,030 - dumsi - INFO - Recognized: 
+2025-04-09 19:23:56,599 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:01,807 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:10,479 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:23,738 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:27,552 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:36,106 - dumsi - INFO - Recognized: blue video download
+2025-04-09 19:24:36,129 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:24:43,656 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:51,008 - dumsi - INFO - Recognized: 
+2025-04-09 19:24:55,214 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:09,876 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:23,277 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:30,101 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:35,016 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:37,719 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:41,412 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:44,434 - dumsi - INFO - Recognized: 
+2025-04-09 19:25:51,095 - dumsi - INFO - Recognized: MP3 gana
+2025-04-09 19:25:51,104 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:25:57,441 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:08,214 - dumsi - INFO - Recognized: audio mat karna
+2025-04-09 19:26:08,222 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:26:14,152 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:19,572 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:23,552 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:32,537 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:39,768 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:55,165 - dumsi - INFO - Recognized: 
+2025-04-09 19:26:59,746 - dumsi - INFO - Recognized: 
+2025-04-09 19:27:09,576 - dumsi - INFO - Recognized: 
+2025-04-09 19:27:22,160 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:30:44,624 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:30:44,627 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:30:44,627 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:30:44,627 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:30:45,326 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:30:45,327 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:30:45,439 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:30:45,439 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:30:45,439 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:30:51,098 - dumsi - INFO - Recognized: 
+2025-04-09 19:30:58,450 - dumsi - INFO - Recognized: hello
+2025-04-09 19:30:58,463 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:31:04,158 - dumsi - INFO - Recognized: 
+2025-04-09 19:31:07,924 - dumsi - INFO - Recognized: nice
+2025-04-09 19:31:07,933 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:31:13,481 - dumsi - INFO - Recognized: 
+2025-04-09 19:31:19,198 - dumsi - INFO - Recognized: 
+2025-04-09 19:31:32,975 - dumsi - INFO - Recognized: koi WhatsApp
+2025-04-09 19:31:32,983 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:31:38,229 - dumsi - INFO - Recognized: 
+2025-04-09 19:31:46,570 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:03,436 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:06,653 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:14,834 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:18,442 - dumsi - INFO - Recognized: read response
+2025-04-09 19:32:18,461 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:32:24,031 - dumsi - INFO - Recognized: is 100077
+2025-04-09 19:32:24,039 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:32:29,182 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:44,201 - dumsi - INFO - Recognized: src death Speaker speak
+2025-04-09 19:32:44,218 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:32:49,545 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:55,064 - dumsi - INFO - Recognized: 
+2025-04-09 19:32:59,000 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:03,564 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:10,909 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:14,823 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:22,440 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:32,874 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:44,343 - dumsi - INFO - Recognized: Subway Surfers
+2025-04-09 19:33:44,352 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:33:49,917 - dumsi - INFO - Recognized: co
+2025-04-09 19:33:49,924 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:33:54,978 - dumsi - INFO - Recognized: 
+2025-04-09 19:33:58,247 - dumsi - INFO - Recognized: coding of programming
+2025-04-09 19:33:58,255 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': "I'm not sure I understand. Could you rephrase that?"}
+2025-04-09 19:34:02,401 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:34:04,194 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:34:04,197 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:34:04,197 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:34:04,197 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:34:04,889 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:34:04,890 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:34:05,001 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:34:05,002 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:34:05,002 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:34:09,768 - dumsi - INFO - Recognized: hello
+2025-04-09 19:34:09,777 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:34:18,973 - dumsi - INFO - Recognized: I don't need your help
+2025-04-09 19:34:18,983 - dumsi - ERROR - Error in main loop: play_funny_sound() missing 1 required positional argument: 'self'
+2025-04-09 19:34:33,028 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:34:33,031 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:34:33,031 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:34:33,031 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:34:33,842 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:34:33,844 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:34:33,955 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:34:33,955 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:34:33,955 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:34:37,580 - dumsi - INFO - Recognized: 
+2025-04-09 19:34:46,555 - dumsi - INFO - Recognized: when was not found in
+2025-04-09 19:34:46,564 - dumsi.processor - INFO - Intent: info, Response: {'intent': 'info', 'action': None, 'speech': "I'm Dumsi, a voice-controlled robot. You can ask me to move in different directions or tell me to stop."}
+2025-04-09 19:34:49,464 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 19:34:51,198 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:34:51,201 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:34:51,201 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:34:51,201 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:34:51,880 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:34:51,882 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:34:51,994 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:34:51,995 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:34:51,995 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:34:59,505 - dumsi - INFO - Recognized: 
+2025-04-09 19:35:05,634 - dumsi - INFO - Recognized: 
+2025-04-09 19:35:12,597 - dumsi - INFO - Recognized: hello
+2025-04-09 19:35:12,605 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:35:21,199 - dumsi - INFO - Recognized: no no no
+2025-04-09 19:35:21,209 - dumsi - ERROR - Error in main loop: [Errno 2] No such file or directory: 'mpg123'
+2025-04-09 19:35:47,179 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:35:47,182 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:35:47,182 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:35:47,182 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:35:47,967 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:35:47,968 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:35:48,079 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:35:48,079 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:35:48,079 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:35:51,720 - dumsi - INFO - Recognized: 
+2025-04-09 19:35:57,907 - dumsi - INFO - Recognized: hello
+2025-04-09 19:35:57,915 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:36:08,082 - dumsi - INFO - Recognized: I don't need your help
+2025-04-09 19:36:08,094 - dumsi - ERROR - Error in main loop: [Errno 2] No such file or directory: 'mp3'
+2025-04-09 19:37:08,128 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 19:37:08,131 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 19:37:08,132 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 19:37:08,132 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 19:37:08,774 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 19:37:08,775 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 19:37:08,891 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 19:37:08,892 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 19:37:08,892 - dumsi - INFO - All components initialized successfully
+2025-04-09 19:37:13,882 - dumsi - INFO - Recognized: hello hello
+2025-04-09 19:37:13,890 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:37:19,696 - dumsi - INFO - Recognized: 
+2025-04-09 19:37:23,902 - dumsi - INFO - Recognized: 
+2025-04-09 19:37:27,339 - dumsi - INFO - Recognized: why don't need your help
+2025-04-09 19:37:33,472 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 19:37:47,242 - dumsi - INFO - Recognized: 
+2025-04-09 19:37:50,682 - dumsi - INFO - Recognized: hello
+2025-04-09 19:37:50,695 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:37:56,346 - dumsi - INFO - Recognized: 
+2025-04-09 19:37:59,777 - dumsi - INFO - Recognized: shut the up
+2025-04-09 19:38:05,893 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 19:38:18,076 - dumsi - INFO - Recognized: 
+2025-04-09 19:38:21,350 - dumsi - INFO - Recognized: 
+2025-04-09 19:38:37,300 - dumsi - INFO - Recognized: 
+2025-04-09 19:38:42,762 - dumsi - INFO - Recognized: 
+2025-04-09 19:38:49,082 - dumsi - INFO - Recognized: 
+2025-04-09 19:38:59,448 - dumsi - INFO - Recognized: hello hello hello hello hello hello
+2025-04-09 19:38:59,456 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:39:05,179 - dumsi - INFO - Recognized: 
+2025-04-09 19:39:08,930 - dumsi - INFO - Recognized: do you know
+2025-04-09 19:39:15,044 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 19:39:20,853 - dumsi - INFO - Recognized: 
+2025-04-09 19:39:36,681 - dumsi - INFO - Recognized: 
+2025-04-09 19:39:41,287 - dumsi - INFO - Recognized: 
+2025-04-09 19:39:47,713 - dumsi - INFO - Recognized: 
+2025-04-09 19:40:04,724 - dumsi - INFO - Recognized: hello hello hello 123 123 123 123
+2025-04-09 19:40:04,736 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 19:40:13,770 - dumsi - INFO - Recognized: 
+2025-04-09 19:40:20,686 - dumsi - INFO - Recognized: 
+2025-04-09 19:40:25,345 - dumsi - INFO - Recognized: did you know about a
+2025-04-09 19:40:31,461 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 19:40:45,740 - dumsi - INFO - Recognized: download download
+2025-04-09 19:40:51,856 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 19:41:05,396 - dumsi - INFO - Recognized: 
+2025-04-09 19:41:19,549 - dumsi - INFO - Recognized: 
+2025-04-09 19:41:23,754 - dumsi - INFO - Recognized: 
+2025-04-09 19:41:27,551 - dumsi - INFO - Recognized: do you speak
+2025-04-09 19:41:33,667 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 19:41:37,100 - dumsi - INFO - Recognized: move forward
+2025-04-09 19:41:37,115 - dumsi.processor - INFO - Intent: move, Response: {'intent': 'move', 'action': 'move_forward', 'speech': 'Moving forward'}
+2025-04-09 19:41:37,115 - dumsi.controller - INFO - Executing action: move_forward
+2025-04-09 19:41:37,115 - dumsi.controller - INFO - Simulating: Moving forward
+2025-04-09 19:41:41,072 - dumsi - INFO - Recognized: move left
+2025-04-09 19:41:41,081 - dumsi.processor - INFO - Intent: move, Response: {'intent': 'move', 'action': 'move_left', 'speech': 'Moving left'}
+2025-04-09 19:41:41,081 - dumsi.controller - INFO - Executing action: move_left
+2025-04-09 19:41:41,081 - dumsi.controller - INFO - Simulating: Turning left
+2025-04-09 19:41:45,627 - dumsi - INFO - Recognized: move right
+2025-04-09 19:41:45,635 - dumsi.processor - INFO - Intent: move, Response: {'intent': 'move', 'action': 'move_right', 'speech': 'Moving right'}
+2025-04-09 19:41:45,636 - dumsi.controller - INFO - Executing action: move_right
+2025-04-09 19:41:45,636 - dumsi.controller - INFO - Simulating: Turning right
+2025-04-09 19:41:50,784 - dumsi - INFO - Recognized: Fly Fly Fly Fly Fly Fly Fly Fly Fly Fly Fly Fly
+2025-04-09 19:41:55,803 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 21:53:36,159 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 21:53:36,163 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 21:53:36,163 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 21:53:36,163 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 21:53:36,749 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 21:53:36,750 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 21:53:36,862 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 21:53:36,862 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 21:53:36,863 - dumsi - INFO - All components initialized successfully
+2025-04-09 21:53:42,877 - dumsi - INFO - Recognized: 
+2025-04-09 21:53:49,735 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:03,342 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:14,275 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:17,962 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:22,365 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:25,510 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 21:54:27,530 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 21:54:27,533 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 21:54:27,534 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 21:54:27,534 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 21:54:28,132 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 21:54:28,133 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 21:54:28,245 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 21:54:28,245 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 21:54:28,245 - dumsi - INFO - All components initialized successfully
+2025-04-09 21:54:34,954 - dumsi - INFO - Recognized: hi hello
+2025-04-09 21:54:34,978 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 21:54:48,793 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:55,728 - dumsi - INFO - Recognized: 
+2025-04-09 21:54:59,503 - dumsi - INFO - Recognized: 
+2025-04-09 21:55:14,234 - dumsi - INFO - Recognized: 
+2025-04-09 21:55:17,889 - dumsi - INFO - Recognized: 
+2025-04-09 21:55:20,466 - dumsi - INFO - Shutting down Dumsi...
+2025-04-09 21:55:22,816 - dumsi - INFO - Starting Dumsi - Voice-controlled Robot
+2025-04-09 21:55:22,819 - dumsi - INFO - Configuration loaded successfully
+2025-04-09 21:55:22,820 - dumsi.listener - WARNING - Unknown engine: speechrecognition, falling back to speechrecognition.
+2025-04-09 21:55:22,820 - dumsi.listener - INFO - Initialized AudioListener with speechrecognition engine
+2025-04-09 21:55:23,408 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-09 21:55:23,409 - dumsi.speaker - WARNING - Unknown TTS engine: pyttsx3, falling back to pyttsx3
+2025-04-09 21:55:23,521 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-09 21:55:23,521 - dumsi.controller - INFO - Initialized RobotController in simulation mode
+2025-04-09 21:55:23,521 - dumsi - INFO - All components initialized successfully
+2025-04-09 21:55:27,595 - dumsi - INFO - Recognized: hello
+2025-04-09 21:55:27,604 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-09 21:55:33,267 - dumsi - INFO - Recognized: 
+2025-04-09 21:55:49,320 - dumsi - INFO - Recognized: 
+2025-04-09 21:55:53,604 - dumsi - INFO - Recognized: keep bike registration
+2025-04-09 21:55:59,771 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 21:56:08,377 - dumsi - INFO - Recognized: 
+2025-04-09 21:56:19,801 - dumsi - INFO - Recognized: 
+2025-04-09 21:56:24,724 - dumsi - INFO - Recognized: move forward
+2025-04-09 21:56:24,754 - dumsi.processor - INFO - Intent: move, Response: {'intent': 'move', 'action': 'move_forward', 'speech': 'Moving forward'}
+2025-04-09 21:56:24,755 - dumsi.controller - INFO - Executing action: move_forward
+2025-04-09 21:56:24,755 - dumsi.controller - INFO - Simulating: Moving forward
+2025-04-09 21:56:27,396 - dumsi - INFO - Recognized: 
+2025-04-09 21:56:42,081 - dumsi - INFO - Recognized: retrieve skipping unlock
+2025-04-09 21:56:48,215 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 21:56:53,335 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:01,175 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:07,944 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:24,032 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:27,917 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:35,901 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:42,943 - dumsi - INFO - Recognized: 
+2025-04-09 21:57:51,349 - dumsi - INFO - Recognized: is 18 years Mein kam karne dijiye
+2025-04-09 21:57:57,488 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 21:58:12,204 - dumsi - INFO - Recognized: Hindi film
+2025-04-09 21:58:18,336 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-09 21:58:20,860 - dumsi - INFO - Recognized: 
+2025-04-09 21:58:27,359 - dumsi - INFO - Recognized: 
+2025-04-09 21:58:36,118 - dumsi - INFO - Recognized: 
+2025-04-09 21:58:43,017 - dumsi - INFO - Recognized: 
+2025-04-09 21:58:51,272 - dumsi - INFO - Recognized: 
+2025-04-09 21:58:56,984 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:00,184 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:03,224 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:06,430 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:09,384 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:12,780 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:16,088 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:26,345 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:32,306 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:40,817 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:43,983 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:50,809 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:53,868 - dumsi - INFO - Recognized: 
+2025-04-09 21:59:57,985 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:04,246 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:12,535 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:19,037 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:32,314 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:37,216 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:40,976 - dumsi - INFO - Recognized: 
+2025-04-09 22:00:50,475 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:00,201 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:05,018 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:08,090 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:14,030 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:24,538 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:27,752 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:33,406 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:40,349 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:51,001 - dumsi - INFO - Recognized: 
+2025-04-09 22:01:55,811 - dumsi - INFO - Recognized: 
+2025-04-09 22:02:17,561 - dumsi - INFO - Recognized: 
+2025-04-09 22:02:30,698 - dumsi - INFO - Recognized: 
+2025-04-09 22:02:40,300 - dumsi - INFO - Recognized: 
+2025-04-09 22:02:53,365 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:08,448 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:12,853 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:18,045 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:26,366 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:31,768 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:43,091 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:51,245 - dumsi - INFO - Recognized: 
+2025-04-09 22:03:57,268 - dumsi - INFO - Recognized: 
+2025-04-09 22:04:01,978 - dumsi - INFO - Recognized: 
+2025-04-09 22:04:16,054 - dumsi - INFO - Recognized: 
+2025-04-09 22:04:27,974 - dumsi - INFO - Recognized: 
+2025-04-09 22:04:42,635 - dumsi - INFO - Recognized: 
+2025-04-09 22:04:53,007 - dumsi - INFO - Recognized: 
+2025-04-09 22:05:08,040 - dumsi - INFO - Recognized: padh Le Humko
+2025-04-09 22:05:13,771 - dumsi - INFO - Shutting down Dumsi...

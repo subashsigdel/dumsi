@@ -1,0 +1,28 @@
+# Dumsi Robot Configuration
+
+# Speech Recognition
+speech_recognition:
+  engine: "speechrecognition"  # Options: speechrecognition, vosk, whisper
+  timeout: 5
+  phrase_time_limit: 10
+  energy_threshold: 300
+  vosk_model_path: "models/vosk"
+
+# Natural Language Processing
+nlp:
+  spacy_model: "en_core_web_sm"
+  confidence_threshold: 0.7
+
+# Text-to-Speech
+text_to_speech:
+  engine: "pyttsx3"  # Options: pyttsx3, gtts
+  rate: 150
+  volume: 1.0
+  voice_id: null  # Will use default voice if null
+
+# Robot Control
+robot_control:
+  simulation_mode: true
+  default_speed: 0.5
+  turn_speed: 0.3
+  move_time: 1.0

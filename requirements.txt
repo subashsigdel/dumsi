@@ -1,0 +1,22 @@
+# Speech Recognition
+SpeechRecognition==3.10.0
+vosk==0.3.45
+whisper==1.1.10
+pyaudio==0.2.13
+
+# NLP
+spacy==3.7.0
+nltk==3.8.1
+
+# Text-to-Speech
+pyttsx3==2.90
+pygame==2.5.0
+
+# Utilities
+PyYAML==6.0.1
+numpy==1.24.3
+sounddevice==0.4.6
+soundfile==0.12.1
+
+# Testing
+pytest==7.3.1
