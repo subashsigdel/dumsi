@@ -38,19 +38,38 @@ void setup() {
 
 
 void loop(){
-  LookLeft();
-  CenterAfterLeft();
-  LookRight();
-  CenterAfterRight();
-  EyeUp();
-  CenterAfterEyeUp();
-  EyeDownFast();
-  CenterAfterEyeDown();
-  NeckMoveRight();
-  NeckMoveCenterAfterRight();
-  NeckMoveLeft();
-  NeckMoveCenterAfterLeft();
-  JawMoveRight();
-  JawMoveCenterAfterRight();
+ if (Serial.available()) {
+    String command = Serial.readStringUntil('\n');
+    if (command == "headleft") {
+      // Turn left action
+      NeckMoveLeft();
+      NeckMoveCenterAfterLeft();
+    }
+    else if (command == "headright") {
+      // Turn right action
+      NeckMoveRight();
+      NeckMoveCenterAfterRight();
+    }else if (command == "openmouth") {
+      // Turn right action
+      JawMoveRight();
+    }else if (command == "closemouth") {
+      // Turn right action
+      JawMoveCenterAfterRight();
+    }else if (command == "lookright") {
+      // Turn right action
+      LookRight();
+      CenterAfterRight();
+    }else if (command == "lookleft") {
+      // Turn right action
+      LookLeft();
+      CenterAfterLeft();
+    }
+    
+    
+    
+    
+    
+    }
+    
   
 }
