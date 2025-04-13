@@ -1,96 +1,144 @@
 """
-Robot control module for Dumsi
+Robot Controller module for Dumsi
 """
 
 import logging
+import serial
 import time
+import threading
 
 
 class RobotController:
-    """Controls the physical or simulated robot hardware"""
+    """Controls the physical robot movements via Arduino"""
 
     def __init__(self, config):
         """Initialize the robot controller with the given configuration"""
         self.logger = logging.getLogger("dumsi.controller")
         self.config = config
-        self.simulation_mode = config.get("simulation_mode", True)
+        self.port = config.get("arduino_port", "/dev/ttyACM0")  # Default for Linux
+        self.baud_rate = config.get("arduino_baud_rate", 9600)
+        self.serial = None
+        self.connected = False
+        self.lock = threading.Lock()
+        self.keep_alive = True
 
-        # Movement parameters
-        self.speed = config.get("default_speed", 0.5)
-        self.turn_speed = config.get("turn_speed", 0.3)
-        self.move_time = config.get("move_time", 1.0)
+        # Connect to the Arduino
+        self._connect()
 
-        # Hardware interface would be initialized here if not in simulation mode
-        if not self.simulation_mode:
-            self._init_hardware()
+        # Start keep-alive thread
+        self.keep_alive_thread = threading.Thread(target=self._keep_alive_loop)
+        self.keep_alive_thread.daemon = True
+        self.keep_alive_thread.start()
 
-        self.logger.info(f"Initialized RobotController in {'simulation' if self.simulation_mode else 'hardware'} mode")
+    def _connect(self):
+        """Establish a connection to the Arduino"""
+        try:
+            self.serial = serial.Serial(self.port, self.baud_rate, timeout=1)
+            # Give the Arduino time to reset after connection
+            time.sleep(2)
+            self.connected = True
+            self.logger.info(f"Connected to Arduino on {self.port}")
 
-    def _init_hardware(self):
-        """Initialize hardware interfaces (motors, etc.)"""
-        # This would connect to actual hardware
-        # For example, using GPIO on a Raspberry Pi
-        self.logger.info("Hardware interfaces not implemented")
-        pass
+            # Read initial message from Arduino
+            response = self._read_response()
+            if response and "initialized" in response.lower():
+                self.logger.info("Arduino initialized successfully")
 
-    def execute_action(self, action):
-        """
-        Execute a robot action
+        except Exception as e:
+            self.logger.error(f"Failed to connect to Arduino: {e}")
+            self.connected = False
 
-        Args:
-            action (str): The action to perform (e.g., "move_forward", "stop")
-        """
-        self.logger.info(f"Executing action: {action}")
+    def _read_response(self, timeout=1.0):
+        """Read a response from the Arduino"""
+        if not self.connected or not self.serial:
+            return None
 
-        if action == "move_forward":
-            self._move_forward()
-        elif action == "move_backward":
-            self._move_backward()
-        elif action == "move_left":
-            self._turn_left()
-        elif action == "move_right":
-            self._turn_right()
-        elif action == "stop":
-            self._stop()
-        else:
-            self.logger.warning(f"Unknown action: {action}")
+        start_time = time.time()
+        while (time.time() - start_time) < timeout:
+            if self.serial.in_waiting > 0:
+                try:
+                    response = self.serial.readline().decode('utf-8').strip()
+                    self.logger.debug(f"Arduino response: {response}")
+                    return response
+                except Exception as e:
+                    self.logger.error(f"Error reading from Arduino: {e}")
+                    return None
+            time.sleep(0.1)
+        return None
 
-    def _move_forward(self):
-        """Move the robot forward"""
-        if self.simulation_mode:
-            self.logger.info("Simulating: Moving forward")
-        else:
-            # Hardware control code would go here
-            self.logger.info("Hardware: Moving forward")
+    def _keep_alive_loop(self):
+        """Send periodic commands to keep the connection alive"""
+        while self.keep_alive:
+            if self.connected:
+                try:
+                    # Send a simple command to keep the connection active
+                    # Using a non-intrusive command that won't affect robot behavior
+                    with self.lock:
+                        # Just read responses without sending commands
+                        while self.serial.in_waiting > 0:
+                            self._read_response(timeout=0.1)
+                except Exception as e:
+                    self.logger.error(f"Keep-alive error: {e}")
+                    self.connected = False
+                    self._connect()  # Try to reconnect
 
-    def _move_backward(self):
-        """Move the robot backward"""
-        if self.simulation_mode:
-            self.logger.info("Simulating: Moving backward")
-        else:
-            # Hardware control code would go here
-            self.logger.info("Hardware: Moving backward")
+            # Sleep for a bit before next keep-alive
+            time.sleep(5)
 
-    def _turn_left(self):
-        """Turn the robot left"""
-        if self.simulation_mode:
-            self.logger.info("Simulating: Turning left")
-        else:
-            # Hardware control code would go here
-            self.logger.info("Hardware: Turning left")
+    def send_command(self, command):
+        """Send a command to the Arduino"""
+        if not self.connected or not self.serial:
+            self.logger.error("Cannot send command: Not connected to Arduino")
+            return False
 
-    def _turn_right(self):
-        """Turn the robot right"""
-        if self.simulation_mode:
-            self.logger.info("Simulating: Turning right")
-        else:
-            # Hardware control code would go here
-            self.logger.info("Hardware: Turning right")
+        try:
+            with self.lock:
+                self.logger.debug(f"Sending command to Arduino: {command}")
+                self.serial.write(f"{command}\n".encode('utf-8'))
+                response = self._read_response()
+                return response
+        except Exception as e:
+            self.logger.error(f"Error sending command to Arduino: {e}")
+            self.connected = False
+            self._connect()  # Try to reconnect
+            return False
 
-    def _stop(self):
-        """Stop the robot"""
-        if self.simulation_mode:
-            self.logger.info("Simulating: Stopping")
-        else:
-            # Hardware control code would go here
-            self.logger.info("Hardware: Stopping")
+    def move_eye_vertical(self, angle):
+        """Move the vertical eye servo to the specified angle"""
+        return self.send_command(f"EYE_V {angle}")
+
+    def move_eye_horizontal(self, angle):
+        """Move the horizontal eye servo to the specified angle"""
+        return self.send_command(f"EYE_H {angle}")
+
+    def move_jaw(self, angle):
+        """Move the jaw servo to the specified angle"""
+        return self.send_command(f"JAW {angle}")
+
+    def move_neck(self, angle):
+        """Move the neck servo to the specified angle"""
+        return self.send_command(f"NECK {angle}")
+
+    def start_talking(self):
+        """Start the talking animation"""
+        return self.send_command("TALK 1")
+
+    def stop_talking(self):
+        """Stop the talking animation"""
+        return self.send_command("TALK 0")
+
+    def set_autonomous_mode(self, enabled):
+        """Enable or disable autonomous mode"""
+        value = 1 if enabled else 0
+        return self.send_command(f"AUTO {value}")
+
+    def close(self):
+        """Close the connection to the Arduino"""
+        self.keep_alive = False
+        if hasattr(self, 'keep_alive_thread') and self.keep_alive_thread.is_alive():
+            self.keep_alive_thread.join(timeout=1.0)
+
+        if self.serial:
+            self.serial.close()
+            self.connected = False
+            self.logger.info("Disconnected from Arduino")

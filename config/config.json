@@ -1,23 +1,33 @@
 {
-  "speech_model": "whisper",
+  "speech_model": "vosk",
   "whisper_model_size": "base",
   "vosk_model_path": "models/vosk-model-small-en-us-0.15",
-  "spacy_model": "en_core_web_sm",
+
   "tts_engine": "pyttsx3",
+  "rate": 150,
+  "volume": 1.0,
+
+  "arduino_port": null,
+  "arduino_baud_rate": 9600,
+
+  "eye_scan_enabled": true,
+  "eye_scan_speed": 0.5,
+
+  "language_model": "gpt-3.5-turbo",
+  "temperature": 0.7,
+
   "log_level": "INFO",
-  "robot_settings": {
-    "move_speed": 0.5,
-    "turn_speed": 0.3
+
+  "commands": {
+    "hello": "Hello! I am Dumsi, your voice-controlled robot.",
+    "goodbye": "Goodbye! Have a great day!",
+    "help": "You can ask me questions or give me commands to move."
   },
-  "arduino": {
-    "port": "/dev/ttyACM0",
-    "baud_rate": 9600,
-    "enabled": true
-  },
-  "tts": {
-    "engine": "pyttsx3",
-    "rate": 150,
-    "voice_id": 0,
-    "language": "en"
+
+  "robot_emotions": {
+    "greeting": "happy",
+    "farewell": "sad",
+    "question": "curious",
+    "answer": "neutral"
   }
 }

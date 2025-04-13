@@ -1,141 +1,140 @@
 """
 Language processor module for Dumsi
-Integrates with Arduino controller for robot control
 """
 
 import logging
-import time
-import threading
-from src.arduino_controller.arduino_controller import ArduinoController
+import re
+import random
 
 
 class LanguageProcessor:
-    """Processes speech and controls robot actions"""
+    """Processes natural language commands and converts them to robot actions"""
 
     def __init__(self, config):
         """Initialize the language processor with the given configuration"""
         self.logger = logging.getLogger("dumsi.processor")
         self.config = config
 
-        # Initialize Arduino controller
-        try:
-            self.arduino = ArduinoController(config)
-            self.logger.info("Initialized Arduino controller")
-
-            # Reset to default position
-            self.arduino.reset_position()
-        except Exception as e:
-            self.logger.error(f"Failed to initialize Arduino controller: {e}")
-            self.arduino = None
+        # Basic responses for chitchat
+        self.greetings = [
+            "Hello there!",
+            "Hi, how can I help you?",
+            "Hello, I'm Dumsi. Nice to meet you!"
+        ]
+        self.farewells = [
+            "Goodbye!",
+            "See you later!",
+            "Bye for now!"
+        ]
+        self.acknowledgments = [
+            "I understood that.",
+            "Got it.",
+            "I'll handle that for you.",
+            "Processing your request."
+        ]
+        self.confusion = [
+            "I'm not sure I understood that.",
+            "Could you please repeat?",
+            "I didn't catch that. Can you say it differently?"
+        ]
 
     def process(self, text):
-        """
-        Process recognized text and determine appropriate response
+        """Process the input text and return appropriate responses or actions"""
+        text = text.lower().strip()
+        self.logger.debug(f"Processing text: {text}")
 
-        Args:
-            text (str): The recognized speech text
+        # Prepare response structure
+        response = {"speech": None, "action": None}
 
-        Returns:
-            dict: Response containing speech and action
-        """
-        text = text.lower()
-        self.logger.info(f"Processing text: {text}")
+        # Check for greeting patterns
+        if self._is_greeting(text):
+            response["speech"] = random.choice(self.greetings)
+            response["action"] = {"type": "animate", "movement": "greet"}
+            return response
 
-        response = {
-            "speech": None,
-            "action": None
-        }
+        # Check for farewell patterns
+        if self._is_farewell(text):
+            response["speech"] = random.choice(self.farewells)
+            return response
 
-        # Check for robot control commands
-        if self.arduino:
-            if "look up" in text:
-                self.arduino.move_eye_vertical(50)  # Look up
-                response["speech"] = "Looking up"
-                response["action"] = "look_up"
-            elif "look down" in text:
-                self.arduino.move_eye_vertical(90)  # Look down/center
-                response["speech"] = "Looking down"
-                response["action"] = "look_down"
-            elif "look left" in text:
-                self.arduino.move_eye_horizontal(0)  # Look left
-                response["speech"] = "Looking to the left"
-                response["action"] = "look_left"
-            elif "look right" in text:
-                self.arduino.move_eye_horizontal(180)  # Look right
-                response["speech"] = "Looking to the right"
-                response["action"] = "look_right"
-            elif "look center" in text or "look straight" in text:
-                self.arduino.move_eye_horizontal(90)  # Look center
-                response["speech"] = "Looking straight ahead"
-                response["action"] = "look_center"
-            elif "turn head left" in text:
-                self.arduino.move_neck(0)  # Turn head left
-                response["speech"] = "Turning my head to the left"
-                response["action"] = "turn_head_left"
-            elif "turn head right" in text:
-                self.arduino.move_neck(180)  # Turn head right
-                response["speech"] = "Turning my head to the right"
-                response["action"] = "turn_head_right"
-            elif "center head" in text:
-                self.arduino.move_neck(90)  # Center head
-                response["speech"] = "Centering my head"
-                response["action"] = "center_head"
-            elif "open mouth" in text:
-                self.arduino.move_jaw(160)  # Open mouth
-                response["speech"] = "Opening my mouth"
-                response["action"] = "open_mouth"
-            elif "close mouth" in text:
-                self.arduino.move_jaw(90)  # Close mouth
-                response["speech"] = "Closing my mouth"
-                response["action"] = "close_mouth"
-            elif "reset position" in text:
-                self.arduino.reset_position()
-                response["speech"] = "Resetting to default position"
-                response["action"] = "reset"
+        # Check for movement commands
+        movement_action = self._check_movement_commands(text)
+        if movement_action:
+            response["action"] = movement_action
+            response["speech"] = random.choice(self.acknowledgments)
+            return response
 
-        # Process other types of queries here
-        # ...
+        # Check for simple queries
+        query_response = self._handle_queries(text)
+        if query_response:
+            response["speech"] = query_response
+            return response
 
-        # If no specific command was recognized, provide a default response
-        if not response["speech"]:
-            response["speech"] = "I heard you, but I'm not sure what to do"
-
+        # Default response for unrecognized input
+        response["speech"] = random.choice(self.confusion)
         return response
 
-    def speak(self, text):
-        """
-        Handle text-to-speech with mouth animation
+    def _is_greeting(self, text):
+        """Check if the text contains a greeting"""
+        greeting_patterns = ["hello", "hi", "hey", "greetings", "good morning",
+                            "good afternoon", "good evening", "howdy"]
+        return any(pattern in text for pattern in greeting_patterns)
 
-        Args:
-            text (str): The text to speak
+    def _is_farewell(self, text):
+        """Check if the text contains a farewell"""
+        farewell_patterns = ["bye", "goodbye", "see you", "farewell", "good night",
+                            "later", "have a good day"]
+        return any(pattern in text for pattern in farewell_patterns)
 
-        Returns:
-            bool: Success status
-        """
-        if not text:
-            return False
+    def _check_movement_commands(self, text):
+        """Check for robot movement commands in the text"""
+        # Check for eye movement commands
+        if re.search(r"look (up|down|left|right|forward|ahead|straight)", text):
+            if "up" in text:
+                return {"type": "eye_vertical", "value": 50}  # Look up
+            elif "down" in text:
+                return {"type": "eye_vertical", "value": 90}  # Look down
+            elif "left" in text:
+                return {"type": "eye_horizontal", "value": 0}  # Look left
+            elif "right" in text:
+                return {"type": "eye_horizontal", "value": 180}  # Look right
+            else:  # forward, ahead, straight
+                return {"type": "reset_eyes", "value": None}  # Reset eye position
 
-        self.logger.info(f"Speaking: {text}")
+        # Check for neck movement commands
+        if re.search(r"turn (left|right|center|middle|ahead|straight)", text):
+            if "left" in text:
+                return {"type": "neck", "value": 45}  # Turn neck left
+            elif "right" in text:
+                return {"type": "neck", "value": 135}  # Turn neck right
+            else:  # center, middle, ahead, straight
+                return {"type": "neck", "value": 90}  # Center neck
 
-        # Start mouth animation if Arduino is connected
-        if self.arduino:
-            self.arduino.start_talking()
+        # Check for jaw movement
+        if re.search(r"(open|close) (your |the )?mouth", text):
+            if "open" in text:
+                return {"type": "jaw", "value": 160}  # Open jaw
+            else:  # close
+                return {"type": "jaw", "value": 90}  # Close jaw
 
-        # Here you would call your text-to-speech system
-        # For example:
-        # self.tts.speak(text)
+        # Check for talk animation
+        if re.search(r"(start|stop|begin|end) (talking|speaking)", text):
+            if "start" in text or "begin" in text:
+                return {"type": "talk", "value": 1}  # Start talking animation
+            else:  # stop, end
+                return {"type": "talk", "value": 0}  # Stop talking animation
 
-        # For demonstration, we'll just wait based on text length
-        time.sleep(len(text) * 0.08)  # Rough approximation
+        return None
 
-        # Stop mouth animation
-        if self.arduino:
-            self.arduino.stop_talking()
+    def _handle_queries(self, text):
+        """Handle simple queries"""
+        if "what is your name" in text or "who are you" in text:
+            return "I'm Dumsi, your robot assistant. How can I help you today?"
 
-        return True
+        if "what can you do" in text or "help" in text:
+            return "I can listen to your commands, talk to you, and move my head and eyes. Try saying 'look left' or 'turn right'."
 
-    def close(self):
-        """Clean up resources"""
-        if hasattr(self, 'arduino') and self.arduino:
-            self.arduino.close()
-            self.logger.info("Closed Arduino controller")
+        if "how are you" in text:
+            return "I'm functioning properly, thank you for asking!"
+
+        return None

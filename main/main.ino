@@ -35,6 +35,7 @@ void setup() {
   Serial.begin(9600);
 }
 
+<<<<<<< Updated upstream
 
 
 void loop(){
@@ -72,4 +73,34 @@ void loop(){
     }
     
   
+=======
+void loop() {
+  // Check for serial commands
+  if (Serial.available() > 0) {
+    String command = Serial.readStringUntil('\n');
+    command.trim();
+    
+    if (command == "LEFT") LookLeft();
+    else if (command == "LEFT_FAST") LookLeftFast();
+    else if (command == "RIGHT") LookRight();
+    else if (command == "RIGHT_FAST") LookRightFast();
+    else if (command == "CENTER_FROM_LEFT") CenterAfterLeft();
+    else if (command == "CENTER_FROM_LEFT_FAST") CenterAfterLeftFast();
+    else if (command == "CENTER_FROM_RIGHT") CenterAfterRight();
+    else if (command == "CENTER_FROM_RIGHT_FAST") CenterAfterRightFast();
+    else if (command == "EYE_UP") EyeUp();
+    else if (command == "EYE_UP_FAST") EyeUpFast();
+    else if (command == "EYE_DOWN") EyeDown();
+    else if (command == "EYE_DOWN_FAST") EyeDownFast();
+    else if (command == "NECK_LEFT") NeckMoveLeft();
+    else if (command == "NECK_RIGHT") NeckMoveRight();
+    else if (command == "NECK_CENTER_FROM_LEFT") NeckMoveCenterAfterLeft();
+    else if (command == "NECK_CENTER_FROM_RIGHT") NeckMoveCenterAfterRight();
+    else if (command == "JAW_OPEN") JawMoveRight();
+    else if (command == "JAW_CLOSE") JawMoveCenterAfterRight();
+    
+    // Send back an acknowledgment
+    Serial.println("OK");
+  }
+>>>>>>> Stashed changes
 }

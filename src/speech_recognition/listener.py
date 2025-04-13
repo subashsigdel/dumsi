@@ -9,6 +9,7 @@ import queue
 import json
 import numpy as np
 import speech_recognition as sr
+import time
 
 # Import models based on availability
 try:
@@ -28,20 +29,30 @@ except ImportError:
 class SpeechListener:
     """Listens for speech using either Whisper or VOSK models"""
 
-    def __init__(self, config, language_processor, speaker=None):
+    def __init__(self, config, language_processor, speaker=None, controller=None):
         """Initialize the speech listener with the given configuration"""
         self.logger = logging.getLogger("dumsi.listener")
         self.config = config
         self.language_processor = language_processor
         self.speaker = speaker
+        self.controller = controller
         self.listening = False
         self.audio_queue = queue.Queue()
+        self.last_recognition_time = 0
+        self.idle_timeout = config.get("idle_timeout", 60)  # seconds of inactivity before idle behaviors
+        self.idle_thread = None
+        self.is_idle = False
 
         # Set speech recognition model
         self.model_type = config.get("speech_model", "whisper")
         if self.model_type not in ["whisper", "vosk"]:
             self.logger.warning(f"Unknown model type: {self.model_type}. Defaulting to whisper.")
             self.model_type = "whisper"
+
+        # Recognition settings
+        self.energy_threshold = config.get("energy_threshold", 300)
+        self.pause_threshold = config.get("pause_threshold", 0.8)
+        self.dynamic_energy_threshold = config.get("dynamic_energy_threshold", True)
 
         # Initialize the selected model
         self._initialize_model()
@@ -57,6 +68,11 @@ class SpeechListener:
             self.logger.info(f"Loading Whisper model: {model_size}")
             self.model = whisper.load_model(model_size)
             self.recognizer = sr.Recognizer()
+
+            # Configure recognizer settings
+            self.recognizer.energy_threshold = self.energy_threshold
+            self.recognizer.pause_threshold = self.pause_threshold
+            self.recognizer.dynamic_energy_threshold = self.dynamic_energy_threshold
 
         elif self.model_type == "vosk":
             if not VOSK_AVAILABLE:
@@ -82,6 +98,12 @@ class SpeechListener:
         self.listen_thread = threading.Thread(target=self._listen_loop)
         self.listen_thread.daemon = True
         self.listen_thread.start()
+
+        # Start idle behavior monitoring
+        self.idle_thread = threading.Thread(target=self._idle_monitor)
+        self.idle_thread.daemon = True
+        self.idle_thread.start()
+
         self.logger.info("Started speech listener")
 
         # Announce that the system is ready to listen
@@ -93,7 +115,69 @@ class SpeechListener:
         self.listening = False
         if hasattr(self, 'listen_thread') and self.listen_thread.is_alive():
             self.listen_thread.join(timeout=1.0)
+
+        if hasattr(self, 'idle_thread') and self.idle_thread.is_alive():
+            self.idle_thread.join(timeout=1.0)
+
         self.logger.info("Stopped speech listener")
+
+    def _idle_monitor(self):
+        """Monitor for idle state and trigger random movements"""
+        while self.listening:
+            time_since_last_recognition = time.time() - self.last_recognition_time
+
+            if time_since_last_recognition > self.idle_timeout and not self.is_idle:
+                self.is_idle = True
+                self.logger.info("Entering idle state")
+                self._start_idle_behaviors()
+
+            elif time_since_last_recognition <= self.idle_timeout and self.is_idle:
+                self.is_idle = False
+                self.logger.info("Exiting idle state")
+                self._stop_idle_behaviors()
+
+            time.sleep(5)  # Check every 5 seconds
+
+    def _start_idle_behaviors(self):
+        """Start random idle behaviors"""
+        if not self.controller:
+            return
+
+        # Perform a random idle movement
+        self._perform_random_idle_movement()
+
+    def _stop_idle_behaviors(self):
+        """Stop idle behaviors"""
+        if not self.controller:
+            return
+
+        # Reset to default position
+        self.controller.move_eye_vertical(70)
+        self.controller.move_eye_horizontal(90)
+        self.controller.move_neck(90)
+        self.controller.stop_talking()
+
+    def _perform_random_idle_movement(self):
+        """Perform a random idle movement"""
+        if not self.controller or not self.is_idle:
+            return
+
+        # Select a random movement
+        movements = [
+            lambda: self.controller.move_eye_horizontal(np.random.randint(30, 150)),
+            lambda: self.controller.move_eye_vertical(np.random.randint(60, 90)),
+            lambda: self.controller.move_neck(np.random.randint(45, 135)),
+            lambda: self.controller.move_jaw(np.random.randint(90, 120)),
+        ]
+
+        # Execute the random movement
+        movement = np.random.choice(movements)
+        movement()
+
+        # Schedule the next movement if still idle
+        if self.is_idle and self.listening:
+            delay = np.random.randint(3, 10)  # Random delay between 3-10 seconds
+            threading.Timer(delay, self._perform_random_idle_movement).start()
 
     def _listen_loop(self):
         """Main listening loop that runs in a separate thread"""
@@ -105,8 +189,9 @@ class SpeechListener:
     def _listen_with_whisper(self):
         """Listen for speech using Whisper model and sr"""
         with sr.Microphone() as source:
-            self.recognizer.adjust_for_ambient_noise(source)
+            self.recognizer.adjust_for_ambient_noise(source, duration=1.0)
             self.logger.info("Whisper listener is ready")
+            self.last_recognition_time = time.time()  # Initialize the last recognition time
 
             while self.listening:
                 try:
@@ -121,6 +206,7 @@ class SpeechListener:
                     text = result["text"].strip()
 
                     if text:
+                        self.last_recognition_time = time.time()
                         self.logger.info(f"Recognized: {text}")
                         self._process_text(text)
                     else:
@@ -143,6 +229,7 @@ class SpeechListener:
 
         self.logger.info("VOSK listener is ready")
         stream.start_stream()
+        self.last_recognition_time = time.time()  # Initialize the last recognition time
 
         try:
             while self.listening:
@@ -152,6 +239,7 @@ class SpeechListener:
                     text = result.get("text", "").strip()
 
                     if text:
+                        self.last_recognition_time = time.time()
                         self.logger.info(f"Recognized: {text}")
                         self._process_text(text)
         except Exception as e:
@@ -167,11 +255,45 @@ class SpeechListener:
 
         response = self.language_processor.process(text)
 
-        # Handle the response according to your application's needs
-        if response.get("speech") and self.speaker:
-            self.logger.info(f"Response: {response['speech']}")
-            self.speaker.speak(response['speech'])
+        # If there's a robot controller and the response includes an action
+        if self.controller and response.get("action"):
+            action = response["action"]
+            action_type = action.get("type")
 
-        if response.get("action"):
-            self.logger.info(f"Action: {response['action']}")
-            # Here you would trigger the action in your robot controller
+            # Start jaw animation for speaking
+            if self.speaker and response.get("speech"):
+                self.controller.start_talking()
+
+            # Handle different action types
+            if action_type == "eye_vertical":
+                self.controller.move_eye_vertical(action["value"])
+            elif action_type == "eye_horizontal":
+                self.controller.move_eye_horizontal(action["value"])
+            elif action_type == "jaw":
+                self.controller.move_jaw(action["value"])
+            elif action_type == "neck":
+                self.controller.move_neck(action["value"])
+            elif action_type == "talk":
+                if action["value"] == 1:
+                    self.controller.start_talking()
+                else:
+                    self.controller.stop_talking()
+            elif action_type == "reset_eyes":
+                self.controller.move_eye_vertical(70)
+                self.controller.move_eye_horizontal(90)
+            elif action_type == "animate" and action.get("movement") == "greet":
+                # Greet animation sequence
+                self.controller.move_neck(45)  # Look left
+                time.sleep(0.5)
+                self.controller.move_neck(135)  # Look right
+                time.sleep(0.5)
+                self.controller.move_neck(90)  # Center
+
+        # Handle speech response
+        if self.speaker and response.get("speech"):
+            self.speaker.speak(response["speech"])
+
+            # Stop jaw animation after speaking
+            if self.controller:
+                time.sleep(0.5)  # Give a brief pause
+                self.controller.stop_talking()

@@ -184,3 +184,242 @@
 2025-04-13 14:38:08,096 - dumsi.processor - INFO - Processing text: either you but i'm not sure what to do
 2025-04-13 14:38:08,096 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
 2025-04-13 14:38:10,602 - dumsi.main - INFO - Received keyboard interrupt, shutting down
+2025-04-13 15:01:02,043 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 15:01:02,043 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 15:01:02,043 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-13 15:01:02,043 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: module 'serial' has no attribute 'Serial'
+2025-04-13 15:01:02,044 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 15:01:02,044 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 15:01:02,044 - dumsi.main - INFO - Initialized language processor
+2025-04-13 15:01:02,059 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 15:01:02,061 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 15:01:02,061 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 15:01:02,061 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 15:01:02,147 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-13 15:01:02,147 - dumsi.main - INFO - Initialized speaker
+2025-04-13 15:01:02,148 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 15:01:02,893 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 15:01:02,893 - dumsi.listener - INFO - Started speech listener
+2025-04-13 15:01:02,894 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 15:01:02,920 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 15:01:06,830 - dumsi.listener - INFO - Recognized: rapid here if my listen
+2025-04-13 15:01:06,830 - dumsi.processor - INFO - Processing text: rapid here if my listen
+2025-04-13 15:01:06,830 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 15:01:11,253 - dumsi.listener - INFO - Recognized: either you but i'm not sure what to do
+2025-04-13 15:01:11,253 - dumsi.processor - INFO - Processing text: either you but i'm not sure what to do
+2025-04-13 15:01:11,253 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 15:01:15,611 - dumsi.listener - INFO - Recognized: either you but i'm not sure what to do
+2025-04-13 15:01:15,611 - dumsi.processor - INFO - Processing text: either you but i'm not sure what to do
+2025-04-13 15:01:15,611 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 15:01:19,843 - dumsi.listener - INFO - Recognized: either you but i'm not sure what to do
+2025-04-13 15:01:19,844 - dumsi.processor - INFO - Processing text: either you but i'm not sure what to do
+2025-04-13 15:01:19,844 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 15:01:24,610 - dumsi.listener - INFO - Recognized: either new but i'm not sure what to do
+2025-04-13 15:01:24,610 - dumsi.processor - INFO - Processing text: either new but i'm not sure what to do
+2025-04-13 15:01:24,610 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 15:01:28,062 - dumsi.main - INFO - Received keyboard interrupt, shutting down
+2025-04-13 18:34:04,462 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 18:34:04,462 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 18:34:04,462 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-04-13 18:34:04,463 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 18:34:04,463 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 18:34:04,463 - dumsi.robot - INFO - Searching for Arduino...
+2025-04-13 18:34:04,472 - dumsi.robot - WARNING - No Arduino found. Robot control will be disabled.
+2025-04-13 18:34:04,473 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 18:34:04,473 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 18:34:04,473 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 18:34:04,473 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 18:34:04,579 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-13 18:34:04,580 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 18:34:05,932 - dumsi.robot - INFO - Started animation thread
+2025-04-13 18:34:05,933 - dumsi.listener - INFO - Started speech listener
+2025-04-13 18:34:05,933 - dumsi.main - INFO - Dumsi is now active and listening for commands
+2025-04-13 18:34:05,959 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 18:34:11,453 - dumsi.listener - INFO - Recognized: ready
+2025-04-13 18:34:11,453 - dumsi.processor - INFO - Processing text: ready
+2025-04-13 18:34:11,454 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 18:34:25,466 - dumsi.listener - INFO - Recognized: hello
+2025-04-13 18:34:25,466 - dumsi.processor - INFO - Processing text: hello
+2025-04-13 18:34:25,466 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 18:34:29,771 - dumsi.main - INFO - Received interrupt signal, shutting down gracefully...
+2025-04-13 18:34:29,771 - dumsi.main - INFO - Cleaning up...
+2025-04-13 18:34:29,908 - dumsi.listener - INFO - Recognized: i you but i'm not sure what to do
+2025-04-13 18:34:29,908 - dumsi.processor - INFO - Processing text: i you but i'm not sure what to do
+2025-04-13 18:34:29,908 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 18:34:29,911 - dumsi.listener - INFO - Stopped speech listener
+2025-04-13 18:34:29,911 - dumsi.main - INFO - Dumsi has been shut down
+2025-04-13 18:35:06,789 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 18:35:06,789 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 18:35:08,790 - dumsi.arduino_controller - INFO - Connected to Arduino on /dev/ttyACM0
+2025-04-13 18:35:08,791 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 18:35:08,791 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 18:35:08,791 - dumsi.robot - INFO - Searching for Arduino...
+2025-04-13 18:35:08,799 - dumsi.robot - WARNING - No Arduino found. Robot control will be disabled.
+2025-04-13 18:35:08,825 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-13 18:35:08,825 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 18:35:09,505 - dumsi.robot - INFO - Started animation thread
+2025-04-13 18:35:09,506 - dumsi.listener - INFO - Started speech listener
+2025-04-13 18:35:09,506 - dumsi.main - INFO - Dumsi is now active and listening for commands
+2025-04-13 18:35:09,529 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 18:35:22,481 - dumsi.listener - INFO - Recognized: on on
+2025-04-13 18:35:22,481 - dumsi.processor - INFO - Processing text: on on
+2025-04-13 18:35:22,481 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 18:35:26,231 - dumsi.main - INFO - Received interrupt signal, shutting down gracefully...
+2025-04-13 18:35:26,231 - dumsi.main - INFO - Cleaning up...
+2025-04-13 18:35:26,480 - dumsi.listener - INFO - Stopped speech listener
+2025-04-13 18:35:26,480 - dumsi.main - INFO - Dumsi has been shut down
+2025-04-13 18:35:26,562 - dumsi.main - INFO - Received interrupt signal, shutting down gracefully...
+2025-04-13 18:53:06,230 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 18:53:06,230 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 18:53:06,230 - dumsi.main - INFO - Initialized language processor
+2025-04-13 18:53:06,256 - dumsi.speaker - INFO - Speaker is ready using the 'pyttsx3' engine.
+2025-04-13 18:53:06,256 - dumsi.main - INFO - Initialized speaker
+2025-04-13 18:53:08,256 - dumsi.controller - INFO - Connected to Arduino on None
+2025-04-13 18:53:08,257 - dumsi.controller - ERROR - Failed to connect to Arduino: 'Serial' object has no attribute 'fd'
+2025-04-13 18:53:08,257 - dumsi.main - INFO - Initialized robot controller
+2025-04-13 18:53:08,257 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 18:53:08,934 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 18:53:08,935 - dumsi.listener - INFO - Entering idle state
+2025-04-13 18:53:08,936 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 18:53:08,936 - dumsi.listener - INFO - Started speech listener
+2025-04-13 18:53:08,937 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 18:53:08,955 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 18:53:13,937 - dumsi.listener - INFO - Exiting idle state
+2025-04-13 18:53:13,937 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 18:53:13,951 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 18:53:13,951 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 18:53:13,951 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 18:53:19,774 - dumsi.main - INFO - Received shutdown signal, cleaning up...
+2025-04-13 18:53:19,974 - dumsi.main - INFO - Received shutdown signal, cleaning up...
+2025-04-13 19:04:54,853 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 19:04:54,854 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 19:04:54,854 - dumsi.main - INFO - Initialized language processor
+2025-04-13 19:04:54,971 - dumsi.speaker - INFO - Speaker is ready using the 'pyttsx3' engine.
+2025-04-13 19:04:54,972 - dumsi.main - INFO - Initialized speaker
+2025-04-13 19:04:56,972 - dumsi.controller - INFO - Connected to Arduino on None
+2025-04-13 19:04:56,972 - dumsi.controller - ERROR - Failed to connect to Arduino: 'Serial' object has no attribute 'fd'
+2025-04-13 19:04:56,973 - dumsi.main - INFO - Initialized robot controller
+2025-04-13 19:04:56,973 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 19:04:58,420 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 19:04:58,422 - dumsi.listener - INFO - Entering idle state
+2025-04-13 19:04:58,422 - dumsi.listener - INFO - Started speech listener
+2025-04-13 19:04:58,423 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:04:58,423 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 19:04:58,444 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 19:05:03,425 - dumsi.listener - INFO - Exiting idle state
+2025-04-13 19:05:03,425 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:03,425 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:03,425 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:03,425 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:04,911 - dumsi.listener - INFO - Recognized: though
+2025-04-13 19:05:05,412 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:07,839 - dumsi.listener - INFO - Recognized: ready
+2025-04-13 19:05:08,347 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:11,713 - dumsi.listener - INFO - Recognized: cause you grief really un
+2025-04-13 19:05:12,214 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:16,916 - dumsi.listener - INFO - Recognized: can you believe ready and willing this is indeed other than in the
+2025-04-13 19:05:16,916 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:16,939 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:17,439 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:17,939 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:18,440 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:19,040 - dumsi.listener - INFO - Recognized: hello
+2025-04-13 19:05:19,041 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:19,041 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:19,541 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:20,041 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:20,542 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:23,222 - dumsi.listener - INFO - Recognized: hi how can i help though i thought the the ice
+2025-04-13 19:05:23,225 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:23,225 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:23,725 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:24,227 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:24,728 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:28,902 - dumsi.listener - INFO - Recognized: to meet you though i thought the nice to meet you
+2025-04-13 19:05:29,403 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:32,381 - dumsi.listener - INFO - Recognized: elizabeth and i'm not sure i understood path
+2025-04-13 19:05:32,882 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:35,131 - dumsi.listener - INFO - Recognized: have you believe the
+2025-04-13 19:05:35,633 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:38,631 - dumsi.listener - INFO - Recognized: i'm not sure i understood part
+2025-04-13 19:05:39,132 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:44,791 - dumsi.listener - INFO - Recognized: i did it coffee pot can you faggot been sorry dub i didn't know the staff
+2025-04-13 19:05:45,291 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:49,509 - dumsi.listener - INFO - Recognized: i didn't catch ah can you are the full moon
+2025-04-13 19:05:50,009 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:51,905 - dumsi.listener - INFO - Recognized: google your any my didn't catch ah
+2025-04-13 19:05:52,406 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:05:53,492 - dumsi.main - INFO - Received shutdown signal, cleaning up...
+2025-04-13 19:05:53,683 - dumsi.main - INFO - Received shutdown signal, cleaning up...
+2025-04-13 19:06:16,713 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 19:06:16,713 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 19:06:16,713 - dumsi.main - INFO - Initialized language processor
+2025-04-13 19:06:16,739 - dumsi.speaker - INFO - Speaker is ready using the 'pyttsx3' engine.
+2025-04-13 19:06:16,739 - dumsi.main - INFO - Initialized speaker
+2025-04-13 19:06:18,739 - dumsi.controller - INFO - Connected to Arduino on None
+2025-04-13 19:06:18,740 - dumsi.controller - ERROR - Failed to connect to Arduino: 'Serial' object has no attribute 'fd'
+2025-04-13 19:06:18,741 - dumsi.main - INFO - Initialized robot controller
+2025-04-13 19:06:18,741 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 19:06:19,294 - dumsi.main - INFO - Received shutdown signal, cleaning up...
+2025-04-13 19:06:20,294 - dumsi.controller - INFO - Disconnected from Arduino
+2025-04-13 19:06:20,295 - dumsi.main - INFO - Dumsi has been shut down
+2025-04-13 19:06:56,712 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 19:06:56,713 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 19:06:56,713 - dumsi.main - INFO - Initialized language processor
+2025-04-13 19:06:56,742 - dumsi.speaker - INFO - Speaker is ready using the 'pyttsx3' engine.
+2025-04-13 19:06:56,742 - dumsi.main - INFO - Initialized speaker
+2025-04-13 19:06:58,743 - dumsi.controller - INFO - Connected to Arduino on None
+2025-04-13 19:06:58,743 - dumsi.controller - ERROR - Failed to connect to Arduino: 'Serial' object has no attribute 'fd'
+2025-04-13 19:06:58,744 - dumsi.main - INFO - Initialized robot controller
+2025-04-13 19:06:58,744 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 19:06:59,531 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 19:06:59,533 - dumsi.listener - INFO - Entering idle state
+2025-04-13 19:06:59,533 - dumsi.listener - INFO - Started speech listener
+2025-04-13 19:06:59,533 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:06:59,534 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 19:06:59,556 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 19:07:03,353 - dumsi.listener - INFO - Recognized: rapid here with my lisa
+2025-04-13 19:07:03,854 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:04,534 - dumsi.listener - INFO - Exiting idle state
+2025-04-13 19:07:04,534 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:04,534 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:04,534 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:04,535 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:07,740 - dumsi.listener - INFO - Recognized: i did it cash ah i you it to them
+2025-04-13 19:07:08,240 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:10,326 - dumsi.listener - INFO - Recognized: oh my god you believe ready
+2025-04-13 19:07:10,826 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:14,177 - dumsi.listener - INFO - Recognized: my god you believe reveal duplicity repeat
+2025-04-13 19:07:14,678 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:18,788 - dumsi.listener - INFO - Recognized: like not sure i understood ah yeah
+2025-04-13 19:07:19,288 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:22,215 - dumsi.listener - INFO - Recognized: i got sure younger thought ah
+2025-04-13 19:07:22,718 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:25,516 - dumsi.listener - INFO - Recognized: it is from the the keys on you believe really make a noise
+2025-04-13 19:07:26,017 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:28,282 - dumsi.listener - INFO - Recognized: i'm not sure i understood ah
+2025-04-13 19:07:28,783 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:31,668 - dumsi.listener - INFO - Recognized: i did offshore youngest daughter part
+2025-04-13 19:07:32,168 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:34,833 - dumsi.listener - INFO - Recognized: don't like not sure i understand
+2025-04-13 19:07:35,333 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:39,850 - dumsi.listener - INFO - Recognized: i'm not sure i understood path turning my head right
+2025-04-13 19:07:40,350 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:43,689 - dumsi.listener - INFO - Recognized: have you believe really don't live
+2025-04-13 19:07:44,190 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:48,203 - dumsi.listener - INFO - Recognized: i didn't catch part can you for you today
+2025-04-13 19:07:48,703 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:52,302 - dumsi.listener - INFO - Recognized: i didn't catch up on their side and it
+2025-04-13 19:07:52,802 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:07:55,024 - dumsi.listener - INFO - Recognized: cause you grief ready
+2025-04-13 19:07:55,525 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:08:00,961 - dumsi.listener - INFO - Recognized: you know i didn't catch part can you say it's been an opening my mouth
+2025-04-13 19:08:01,461 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:08:03,856 - dumsi.listener - INFO - Recognized: i'm not sure i have the thought
+2025-04-13 19:08:04,357 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:08:06,029 - dumsi.listener - INFO - Recognized: i did
+2025-04-13 19:08:06,530 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:08:10,400 - dumsi.listener - INFO - Recognized: the you're young you faggots the i didn't catch i worry
+2025-04-13 19:08:10,901 - dumsi.controller - ERROR - Cannot send command: Not connected to Arduino
+2025-04-13 19:08:12,668 - dumsi.main - INFO - Received shutdown signal, cleaning up...
+2025-04-13 19:08:12,838 - dumsi.main - INFO - Received shutdown signal, cleaning up...

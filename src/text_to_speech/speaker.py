@@ -16,31 +16,31 @@ except ImportError:
 
 
 class Speaker:
-    """Handles text-to-speech functionality"""
+    """Provides voice output using TTS (Text-to-Speech)"""
 
     def __init__(self, config):
-        """Initialize the speaker with the given configuration"""
+        """Set up the speaker with the provided configuration"""
         self.logger = logging.getLogger("dumsi.speaker")
         self.config = config
         self.engine_type = config.get("tts_engine", "pyttsx3")
 
         if self.engine_type == "google_tts":
             if not GOOGLE_TTS_AVAILABLE:
-                self.logger.warning("Google TTS not available, falling back to pyttsx3")
+                self.logger.warning("Google TTS not found — switching to pyttsx3.")
                 self._init_pyttsx3()
             else:
                 try:
                     self._init_google_tts()
                 except Exception as e:
-                    self.logger.error(f"Error initializing Google TTS: {e}")
+                    self.logger.error(f"Couldn't initialize Google TTS: {e}. Falling back to pyttsx3.")
                     self._init_pyttsx3()
         else:
             self._init_pyttsx3()
 
-        self.logger.info(f"Initialized Speaker with {self.engine_type} engine")
+        self.logger.info(f"Speaker is ready using the '{self.engine_type}' engine.")
 
     def _init_google_tts(self):
-        """Initialize Google Text-to-Speech API client"""
+        """Set up Google Cloud Text-to-Speech"""
         self.client = texttospeech.TextToSpeechClient()
         self.voice = texttospeech.VoiceSelectionParams(
             language_code=self.config.get("language_code", "en-US"),
@@ -53,7 +53,7 @@ class Speaker:
         )
 
     def _init_pyttsx3(self):
-        """Initialize the pyttsx3 engine"""
+        """Set up pyttsx3 as the speech engine"""
         self.engine_type = "pyttsx3"
         self.engine = pyttsx3.init()
         rate = self.config.get("rate", 150)
@@ -69,11 +69,11 @@ class Speaker:
                     break
 
     def speak(self, text, block=False):
-        """Convert text to speech"""
+        """Speak the given text using the configured engine"""
         if not text:
             return
 
-        self.logger.debug(f"Speaking: {text}")
+        self.logger.debug(f"Speaking: '{text}'")
 
         if self.engine_type == "google_tts":
             if block:
@@ -96,7 +96,7 @@ class Speaker:
                 ).start()
 
     def _speak_google_tts(self, text):
-        """Use Google Text-to-Speech API to synthesize speech"""
+        """Generate speech using Google Cloud TTS"""
         synthesis_input = texttospeech.SynthesisInput(text=text)
         response = self.client.synthesize_speech(
             input=synthesis_input,
@@ -106,22 +106,22 @@ class Speaker:
         file_path = "output.mp3"
         with open(file_path, "wb") as out:
             out.write(response.audio_content)
-        self.logger.info("Audio content written to file 'output.mp3'")
+        self.logger.info("Google TTS audio saved to 'output.mp3'.")
 
         # Play the audio
         os.system(f"mpg123 {file_path}")
 
-        # Clean up the file
+        # Clean up
         os.remove(file_path)
 
     def _speak_threaded(self, text):
-        """Speak text in a separate thread (pyttsx3)"""
+        """Helper for speaking text asynchronously using pyttsx3"""
         self.engine.say(text)
         self.engine.runAndWait()
 
     def play_sound(self, sound_file):
-        """Play a sound file"""
+        """Play a pre-recorded sound file"""
         if os.path.exists(sound_file):
             subprocess.run(["mpg123", sound_file])
         else:
-            self.logger.warning(f"Sound file not found at {sound_file}")
+            self.logger.warning(f"Couldn't find the sound file at: {sound_file}")
