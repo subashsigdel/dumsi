@@ -1,96 +1,18 @@
+"""
+Speaker module for Dumsi
+"""
+
 import logging
 import threading
 import os
 import subprocess
-import speech_recognition as sr
 import pyttsx3
-from google.cloud import texttospeech
-import numpy as np
-import json
 
-class AudioListener:
-    """Handles audio input and speech recognition"""
-
-    def __init__(self, config):
-        """Initialize the audio listener with the given configuration"""
-        self.logger = logging.getLogger("dumsi.listener")
-        self.config = config
-        self.engine = config.get("engine", "speechrecognition")
-        self.microphone_index = config.get("microphone_index", None)
-
-        # Initialize default recognizer
-        self.recognizer = sr.Recognizer()
-
-        # Adjust for ambient noise level
-        self.recognizer.dynamic_energy_threshold = True
-        self.recognizer.energy_threshold = config.get("energy_threshold", 300)
-
-        self.logger.info(f"Initialized AudioListener with {self.engine} engine")
-
-    def listen(self, timeout=None, phrase_time_limit=None):
-        """Listen for audio input and return the audio data"""
-        timeout = timeout or self.config.get("timeout", 5)
-        phrase_time_limit = phrase_time_limit or self.config.get("phrase_time_limit", 5)
-
-        self.logger.debug("Listening for audio input...")
-
-        try:
-            with sr.Microphone(device_index=self.microphone_index) as source:
-                # Adjust for ambient noise
-                self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
-
-                audio = self.recognizer.listen(source, timeout=timeout,
-                                               phrase_time_limit=phrase_time_limit)
-                return audio
-        except sr.WaitTimeoutError:
-            self.logger.debug("Listen timeout - no speech detected")
-            return None
-        except Exception as e:
-            self.logger.error(f"Error while listening: {str(e)}")
-            return None
-
-    def recognize(self, audio):
-        """Convert audio to text using the selected engine"""
-        if audio is None:
-            return ""
-
-        try:
-            if self.engine == "speechrecognition":
-                return self.recognizer.recognize_google(audio)
-
-            elif self.engine == "vosk":
-                # Convert audio to format Vosk can use
-                audio_data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
-
-                if self.vosk_recognizer.AcceptWaveform(audio_data):
-                    result = json.loads(self.vosk_recognizer.Result())
-                    return result.get("text", "")
-                else:
-                    result = json.loads(self.vosk_recognizer.PartialResult())
-                    return result.get("partial", "")
-
-            else:
-                self.logger.error(f"Unknown speech recognition engine: {self.engine}")
-                return ""
-
-        except sr.UnknownValueError:
-            self.logger.debug("Could not understand audio, playing funny.mp3")
-            self.play_funny_sound()
-            return ""
-        except sr.RequestError as e:
-            self.logger.error(f"Error with speech recognition service: {str(e)}")
-            return ""
-        except Exception as e:
-            self.logger.error(f"Error in speech recognition: {str(e)}")
-            return ""
-
-    def play_funny_sound(self):
-        """Play the funny sound file if speech is not recognized"""
-        funny_audio_path = os.path.expanduser('~/Downloads/funny.mp3')
-        if os.path.exists(funny_audio_path):
-            subprocess.run(["mpg123", funny_audio_path])
-        else:
-            self.logger.warning(f"Funny sound file not found at {funny_audio_path}")
+try:
+    from google.cloud import texttospeech
+    GOOGLE_TTS_AVAILABLE = True
+except ImportError:
+    GOOGLE_TTS_AVAILABLE = False
 
 
 class Speaker:
@@ -100,16 +22,19 @@ class Speaker:
         """Initialize the speaker with the given configuration"""
         self.logger = logging.getLogger("dumsi.speaker")
         self.config = config
-        self.engine_type = config.get("engine", "pyttsx3")
+        self.engine_type = config.get("tts_engine", "pyttsx3")
 
         if self.engine_type == "google_tts":
-            try:
-                self._init_google_tts()
-            except Exception as e:
-                self.logger.error(f"Error initializing Google TTS: {e}")
+            if not GOOGLE_TTS_AVAILABLE:
+                self.logger.warning("Google TTS not available, falling back to pyttsx3")
                 self._init_pyttsx3()
+            else:
+                try:
+                    self._init_google_tts()
+                except Exception as e:
+                    self.logger.error(f"Error initializing Google TTS: {e}")
+                    self._init_pyttsx3()
         else:
-            self.logger.warning(f"Unknown TTS engine: {self.engine_type}, falling back to pyttsx3")
             self._init_pyttsx3()
 
         self.logger.info(f"Initialized Speaker with {self.engine_type} engine")
@@ -129,6 +54,7 @@ class Speaker:
 
     def _init_pyttsx3(self):
         """Initialize the pyttsx3 engine"""
+        self.engine_type = "pyttsx3"
         self.engine = pyttsx3.init()
         rate = self.config.get("rate", 150)
         self.engine.setProperty("rate", rate)
@@ -192,3 +118,10 @@ class Speaker:
         """Speak text in a separate thread (pyttsx3)"""
         self.engine.say(text)
         self.engine.runAndWait()
+
+    def play_sound(self, sound_file):
+        """Play a sound file"""
+        if os.path.exists(sound_file):
+            subprocess.run(["mpg123", sound_file])
+        else:
+            self.logger.warning(f"Sound file not found at {sound_file}")

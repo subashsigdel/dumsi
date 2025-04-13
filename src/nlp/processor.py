@@ -1,150 +1,141 @@
 """
-Natural language processing module for Dumsi
+Language processor module for Dumsi
+Integrates with Arduino controller for robot control
 """
 
 import logging
-import re
-import spacy
-from collections import defaultdict
-import sys
-
-import logging
+import time
 import threading
-import os
-import subprocess
-import speech_recognition as sr
-import pyttsx3
-from google.cloud import texttospeech
-import numpy as np
-import json
+from src.arduino_controller.arduino_controller import ArduinoController
 
-
-import os
-import pygame
-
-def play_funny_sound():
-    """Play the funny sound file if speech is not recognized"""
-    funny_audio_path = os.path.expanduser('~/Downloads/funny.mp3')
-
-    if os.path.exists(funny_audio_path):
-        # Initialize pygame mixer
-        pygame.mixer.init()
-
-        # Load and play the sound
-        pygame.mixer.music.load(funny_audio_path)
-        pygame.mixer.music.play()
-
-        # Wait until the sound finishes playing
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
-    else:
-        print(f"Funny sound file not found at {funny_audio_path}")
 
 class LanguageProcessor:
-    """Processes natural language input and determines appropriate responses"""
+    """Processes speech and controls robot actions"""
 
     def __init__(self, config):
         """Initialize the language processor with the given configuration"""
         self.logger = logging.getLogger("dumsi.processor")
         self.config = config
 
-        # Load spaCy model
+        # Initialize Arduino controller
         try:
-            self.nlp = spacy.load(config.get("spacy_model", "en_core_web_sm"))
-            self.logger.info("Loaded spaCy model successfully")
-        except OSError:
-            self.logger.warning("spaCy model not found. Downloading...")
-            import subprocess
-            subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
-            self.nlp = spacy.load("en_core_web_sm")
+            self.arduino = ArduinoController(config)
+            self.logger.info("Initialized Arduino controller")
 
-        # Define command patterns
-        self.command_patterns = {
-            "greeting": [r"hello", r"hi", r"hey", r"greetings"],
-            "farewell": [r"goodbye", r"bye", r"see you", r"later"],
-            "move": [r"move", r"go", r"walk", r"run"],
-            "stop": [r"stop", r"halt", r"freeze", r"don't move"],
-            "info": [r"what", r"who", r"where", r"when", r"how", r"tell me"],
-        }
-
-        # Compile patterns
-        self.compiled_patterns = {}
-        for intent, patterns in self.command_patterns.items():
-            self.compiled_patterns[intent] = [
-                re.compile(r"\b" + pattern + r"\b", re.IGNORECASE)
-                for pattern in patterns
-            ]
+            # Reset to default position
+            self.arduino.reset_position()
+        except Exception as e:
+            self.logger.error(f"Failed to initialize Arduino controller: {e}")
+            self.arduino = None
 
     def process(self, text):
         """
-        Process the input text and return a response dictionary
+        Process recognized text and determine appropriate response
+
+        Args:
+            text (str): The recognized speech text
 
         Returns:
-            dict: {
-                "intent": detected intent,
-                "action": action to perform (if any),
-                "speech": text to speak in response
-            }
+            dict: Response containing speech and action
         """
-        if not text:
-            return {"speech": "I didn't hear anything"}
+        text = text.lower()
+        self.logger.info(f"Processing text: {text}")
 
-        # Process with spaCy
-        doc = self.nlp(text)
-
-        # Determine intent based on patterns
-        intent_scores = defaultdict(int)
-        for intent, patterns in self.compiled_patterns.items():
-            for pattern in patterns:
-                if pattern.search(text):
-                    intent_scores[intent] += 1
-
-        # Get the highest scoring intent
-        if intent_scores:
-            primary_intent = max(intent_scores.items(), key=lambda x: x[1])[0]
-        else:
-            primary_intent = "unknown"
-
-        # Generate response based on intent
-        response = self._generate_response(primary_intent, doc, text)
-
-        self.logger.info(f"Intent: {primary_intent}, Response: {response}")
-        return response
-
-    def _generate_response(self, intent, doc, original_text):
-        """Generate a response based on the detected intent"""
         response = {
-            "intent": intent,
-            "action": None,
-            "speech": None
+            "speech": None,
+            "action": None
         }
 
-        if intent == "greeting":
-            response["speech"] = "Hello! I am Dumsi, how can I help you today?"
+        # Check for robot control commands
+        if self.arduino:
+            if "look up" in text:
+                self.arduino.move_eye_vertical(50)  # Look up
+                response["speech"] = "Looking up"
+                response["action"] = "look_up"
+            elif "look down" in text:
+                self.arduino.move_eye_vertical(90)  # Look down/center
+                response["speech"] = "Looking down"
+                response["action"] = "look_down"
+            elif "look left" in text:
+                self.arduino.move_eye_horizontal(0)  # Look left
+                response["speech"] = "Looking to the left"
+                response["action"] = "look_left"
+            elif "look right" in text:
+                self.arduino.move_eye_horizontal(180)  # Look right
+                response["speech"] = "Looking to the right"
+                response["action"] = "look_right"
+            elif "look center" in text or "look straight" in text:
+                self.arduino.move_eye_horizontal(90)  # Look center
+                response["speech"] = "Looking straight ahead"
+                response["action"] = "look_center"
+            elif "turn head left" in text:
+                self.arduino.move_neck(0)  # Turn head left
+                response["speech"] = "Turning my head to the left"
+                response["action"] = "turn_head_left"
+            elif "turn head right" in text:
+                self.arduino.move_neck(180)  # Turn head right
+                response["speech"] = "Turning my head to the right"
+                response["action"] = "turn_head_right"
+            elif "center head" in text:
+                self.arduino.move_neck(90)  # Center head
+                response["speech"] = "Centering my head"
+                response["action"] = "center_head"
+            elif "open mouth" in text:
+                self.arduino.move_jaw(160)  # Open mouth
+                response["speech"] = "Opening my mouth"
+                response["action"] = "open_mouth"
+            elif "close mouth" in text:
+                self.arduino.move_jaw(90)  # Close mouth
+                response["speech"] = "Closing my mouth"
+                response["action"] = "close_mouth"
+            elif "reset position" in text:
+                self.arduino.reset_position()
+                response["speech"] = "Resetting to default position"
+                response["action"] = "reset"
 
-        elif intent == "farewell":
-            response["speech"] = "Goodbye! Have a nice day."
+        # Process other types of queries here
+        # ...
 
-        elif intent == "move":
-            # Extract direction if present
-            direction = "forward"  # default
-            for token in doc:
-                if token.text.lower() in ["forward", "backward", "left", "right"]:
-                    direction = token.text.lower()
-                    break
-
-            response["action"] = f"move_{direction}"
-            response["speech"] = f"Moving {direction}"
-
-        elif intent == "stop":
-            response["action"] = "stop"
-            response["speech"] = "Stopping now"
-
-        elif intent == "info":
-            # This would be expanded to handle different info requests
-            response["speech"] = "I'm Dumsi, a voice-controlled robot. You can ask me to move in different directions or tell me to stop."
-
-        else:
-            play_funny_sound()
+        # If no specific command was recognized, provide a default response
+        if not response["speech"]:
+            response["speech"] = "I heard you, but I'm not sure what to do"
 
         return response
+
+    def speak(self, text):
+        """
+        Handle text-to-speech with mouth animation
+
+        Args:
+            text (str): The text to speak
+
+        Returns:
+            bool: Success status
+        """
+        if not text:
+            return False
+
+        self.logger.info(f"Speaking: {text}")
+
+        # Start mouth animation if Arduino is connected
+        if self.arduino:
+            self.arduino.start_talking()
+
+        # Here you would call your text-to-speech system
+        # For example:
+        # self.tts.speak(text)
+
+        # For demonstration, we'll just wait based on text length
+        time.sleep(len(text) * 0.08)  # Rough approximation
+
+        # Stop mouth animation
+        if self.arduino:
+            self.arduino.stop_talking()
+
+        return True
+
+    def close(self):
+        """Clean up resources"""
+        if hasattr(self, 'arduino') and self.arduino:
+            self.arduino.close()
+            self.logger.info("Closed Arduino controller")

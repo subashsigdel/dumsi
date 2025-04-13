@@ -1,0 +1,23 @@
+{
+  "speech_model": "whisper",
+  "whisper_model_size": "base",
+  "vosk_model_path": "models/vosk-model-small-en-us-0.15",
+  "spacy_model": "en_core_web_sm",
+  "tts_engine": "pyttsx3",
+  "log_level": "INFO",
+  "robot_settings": {
+    "move_speed": 0.5,
+    "turn_speed": 0.3
+  },
+  "arduino": {
+    "port": "/dev/ttyACM0",
+    "baud_rate": 9600,
+    "enabled": true
+  },
+  "tts": {
+    "engine": "pyttsx3",
+    "rate": 150,
+    "voice_id": 0,
+    "language": "en"
+  }
+}

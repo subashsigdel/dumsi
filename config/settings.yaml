@@ -1,28 +1,42 @@
-# Dumsi Robot Configuration
+# Dumsi Configuration File
 
-# Speech Recognition
+# General Settings
+language: "ne"  # Options: "en" (English), "ne" (Nepali)
+debug: true
+
+# Speech Recognition Settings
 speech_recognition:
-  engine: "speechrecognition"  # Options: speechrecognition, vosk, whisper
-  timeout: 5
-  phrase_time_limit: 10
+  engine: "speechrecognition"
   energy_threshold: 300
-  vosk_model_path: "models/vosk"
+  record_timeout: 3
+  phrase_timeout: 3
+  recognition_language: "ne-NP"  # For Nepali
 
-# Natural Language Processing
-nlp:
-  spacy_model: "en_core_web_sm"
-  confidence_threshold: 0.7
-
-# Text-to-Speech
+# Text to Speech Settings
 text_to_speech:
-  engine: "pyttsx3"  # Options: pyttsx3, gtts
-  rate: 150
-  volume: 1.0
-  voice_id: null  # Will use default voice if null
+  engine: "gtts"
+  language: "ne"  # For Nepali
+  gender: "male"
+  speed_factor: 0.95
 
-# Robot Control
+# NLP Settings
+nlp:
+  model: "basic"
+  language: "ne"
+
+# Robot Control Settings
 robot_control:
-  simulation_mode: true
-  default_speed: 0.5
-  turn_speed: 0.3
-  move_time: 1.0
+  enabled: false
+  servo_pins:
+    head: 18
+    left_arm: 23
+    right_arm: 24
+  movement_speed: 0.8
+
+# Theme Settings
+theme:
+  sound_effects:
+    startup: "data/audio_samples/startup.mp3"
+    shutdown: "data/audio_samples/shutdown.mp3"
+    error: "data/audio_samples/error.mp3"
+    success: "data/audio_samples/success.mp3"

@@ -1,0 +1,186 @@
+2025-04-10 17:30:57,307 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:30:57,308 - dumsi.main - ERROR - Failed to load configuration: Config file not found: config.json
+2025-04-10 17:31:24,074 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:31:24,074 - dumsi.main - ERROR - Failed to load configuration: Config file not found: config.json
+2025-04-10 17:34:26,471 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:34:26,472 - dumsi.main - ERROR - Failed to load configuration: Config file not found: config.json
+2025-04-10 17:35:52,383 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:35:52,385 - dumsi.main - ERROR - Failed to load configuration: Config file not found: config.json
+2025-04-10 17:37:05,424 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:37:05,424 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-10 17:37:05,424 - dumsi.main - INFO - Using speech model from command line: whisper
+2025-04-10 17:37:06,130 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-10 17:37:06,131 - dumsi.main - INFO - Initialized language processor
+2025-04-10 17:37:06,131 - dumsi.listener - INFO - Loading Whisper model: base
+2025-04-10 17:37:06,131 - dumsi.main - ERROR - Failed to initialize speech listener: module 'whisper' has no attribute 'load_model'
+2025-04-10 17:37:09,554 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:37:09,554 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-10 17:37:09,554 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-10 17:37:10,156 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-10 17:37:10,157 - dumsi.main - INFO - Initialized language processor
+2025-04-10 17:37:10,157 - dumsi.listener - ERROR - VOSK model not found at models/vosk-model-small-en-us
+2025-04-10 17:37:10,157 - dumsi.main - ERROR - Failed to initialize speech listener: VOSK model not found at models/vosk-model-small-en-us
+2025-04-10 17:38:50,422 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:38:50,423 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-10 17:38:50,423 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-10 17:38:51,072 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-10 17:38:51,073 - dumsi.main - INFO - Initialized language processor
+2025-04-10 17:38:51,073 - dumsi.listener - ERROR - VOSK model not found at models/vosk-model-small-en-us
+2025-04-10 17:38:51,073 - dumsi.main - ERROR - Failed to initialize speech listener: VOSK model not found at models/vosk-model-small-en-us
+2025-04-10 17:39:44,322 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:39:44,322 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-10 17:39:44,322 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-10 17:39:44,931 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-10 17:39:44,933 - dumsi.main - INFO - Initialized language processor
+2025-04-10 17:39:44,933 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-10 17:39:46,180 - dumsi.main - INFO - Initialized speech listener
+2025-04-10 17:39:46,181 - dumsi.listener - INFO - Started speech listener
+2025-04-10 17:39:46,181 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-10 17:39:46,198 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-10 17:39:58,798 - dumsi.listener - INFO - Recognized: hello hello hello
+2025-04-10 17:39:58,807 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-10 17:39:58,807 - dumsi.listener - INFO - Response: Hello! I am Dumsi, how can I help you today?
+2025-04-10 17:40:03,365 - dumsi.listener - INFO - Recognized: hello hello hello hello hello
+2025-04-10 17:40:03,372 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-10 17:40:03,372 - dumsi.listener - INFO - Response: Hello! I am Dumsi, how can I help you today?
+2025-04-10 17:40:05,987 - dumsi.listener - INFO - Recognized: let the t i was listening
+2025-04-10 17:40:12,123 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:40:15,492 - dumsi.listener - INFO - Recognized: sophisticated
+2025-04-10 17:40:21,607 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:40:23,088 - dumsi.listener - INFO - Recognized: get the other with
+2025-04-10 17:40:29,206 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:40:37,194 - dumsi.listener - INFO - Recognized: think they know they that eleven
+2025-04-10 17:40:43,312 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:40:44,143 - dumsi.listener - INFO - Recognized: can do
+2025-04-10 17:40:50,257 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:40:51,653 - dumsi.listener - INFO - Recognized: hit with terrorism
+2025-04-10 17:40:57,767 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:40:59,412 - dumsi.listener - INFO - Recognized: putting too much
+2025-04-10 17:41:05,526 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:41:13,603 - dumsi.listener - INFO - Recognized: and
+2025-04-10 17:41:19,717 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:41:21,305 - dumsi.listener - INFO - Recognized: and that
+2025-04-10 17:41:27,418 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:41:31,563 - dumsi.listener - INFO - Recognized: hello
+2025-04-10 17:41:31,570 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-10 17:41:31,570 - dumsi.listener - INFO - Response: Hello! I am Dumsi, how can I help you today?
+2025-04-10 17:41:37,962 - dumsi.listener - INFO - Recognized: hey how it can help you
+2025-04-10 17:41:37,969 - dumsi.processor - INFO - Intent: greeting, Response: {'intent': 'greeting', 'action': None, 'speech': 'Hello! I am Dumsi, how can I help you today?'}
+2025-04-10 17:41:37,969 - dumsi.listener - INFO - Response: Hello! I am Dumsi, how can I help you today?
+2025-04-10 17:41:43,089 - dumsi.listener - INFO - Recognized: he he
+2025-04-10 17:41:49,202 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:41:50,495 - dumsi.listener - INFO - Recognized: how you like
+2025-04-10 17:41:50,503 - dumsi.processor - INFO - Intent: info, Response: {'intent': 'info', 'action': None, 'speech': "I'm Dumsi, a voice-controlled robot. You can ask me to move in different directions or tell me to stop."}
+2025-04-10 17:41:50,503 - dumsi.listener - INFO - Response: I'm Dumsi, a voice-controlled robot. You can ask me to move in different directions or tell me to stop.
+2025-04-10 17:41:51,637 - dumsi.listener - INFO - Recognized: three to them
+2025-04-10 17:41:57,751 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:42:04,291 - dumsi.listener - INFO - Recognized: home alone restaurants
+2025-04-10 17:42:10,406 - dumsi.processor - INFO - Intent: unknown, Response: {'intent': 'unknown', 'action': None, 'speech': None}
+2025-04-10 17:42:15,711 - dumsi.main - INFO - Received keyboard interrupt, shutting down
+2025-04-10 17:42:42,874 - dumsi.main - INFO - Starting Dumsi
+2025-04-10 17:42:42,874 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-10 17:42:42,874 - dumsi.main - INFO - Using speech model from command line: whisper
+2025-04-10 17:42:43,458 - dumsi.processor - INFO - Loaded spaCy model successfully
+2025-04-10 17:42:43,459 - dumsi.main - INFO - Initialized language processor
+2025-04-10 17:42:43,459 - dumsi.listener - INFO - Loading Whisper model: base
+2025-04-10 17:42:43,459 - dumsi.main - ERROR - Failed to initialize speech listener: module 'whisper' has no attribute 'load_model'
+2025-04-13 14:30:12,036 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 14:30:12,036 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 14:30:12,036 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: module 'serial' has no attribute 'Serial'
+2025-04-13 14:30:12,037 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 14:30:12,037 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 14:30:12,037 - dumsi.main - INFO - Initialized language processor
+2025-04-13 14:30:12,037 - dumsi.listener - ERROR - Whisper is not available. Install with 'pip install openai-whisper'
+2025-04-13 14:30:12,037 - dumsi.main - ERROR - Failed to initialize speech listener: Whisper is required but not installed
+2025-04-13 14:30:36,810 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 14:30:36,810 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 14:30:36,810 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-13 14:30:36,810 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: module 'serial' has no attribute 'Serial'
+2025-04-13 14:30:36,811 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 14:30:36,811 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 14:30:36,811 - dumsi.main - INFO - Initialized language processor
+2025-04-13 14:30:36,811 - dumsi.listener - ERROR - VOSK is not available. Install with 'pip install vosk'
+2025-04-13 14:30:36,811 - dumsi.main - ERROR - Failed to initialize speech listener: VOSK is required but not installed
+2025-04-13 14:30:54,039 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 14:30:54,039 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 14:30:54,039 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-13 14:30:54,039 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: module 'serial' has no attribute 'Serial'
+2025-04-13 14:30:54,040 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 14:30:54,040 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 14:30:54,040 - dumsi.main - INFO - Initialized language processor
+2025-04-13 14:30:54,040 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 14:30:54,050 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:30:54,050 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:30:54,050 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:30:54,050 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:30:54,972 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 14:30:54,973 - dumsi.listener - INFO - Started speech listener
+2025-04-13 14:30:54,973 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 14:30:54,990 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 14:31:00,225 - dumsi.listener - INFO - Recognized: he wouldn't wouldn't
+2025-04-13 14:31:00,263 - dumsi.processor - INFO - Processing text: he wouldn't wouldn't
+2025-04-13 14:31:00,263 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:31:05,136 - dumsi.listener - INFO - Recognized: i mean
+2025-04-13 14:31:05,136 - dumsi.processor - INFO - Processing text: i mean
+2025-04-13 14:31:05,136 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:31:08,556 - dumsi.listener - INFO - Recognized: and memory evil and
+2025-04-13 14:31:08,556 - dumsi.processor - INFO - Processing text: and memory evil and
+2025-04-13 14:31:08,556 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:31:17,009 - dumsi.listener - INFO - Recognized: the near daniel with a little any his mother
+2025-04-13 14:31:17,009 - dumsi.processor - INFO - Processing text: the near daniel with a little any his mother
+2025-04-13 14:31:17,009 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:31:23,578 - dumsi.listener - INFO - Recognized: he's a set of in nm a lot of the didn't know any of it and
+2025-04-13 14:31:23,658 - dumsi.processor - INFO - Processing text: he's a set of in nm a lot of the didn't know any of it and
+2025-04-13 14:31:23,659 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:31:26,605 - dumsi.listener - INFO - Recognized: yeah on sale
+2025-04-13 14:31:26,605 - dumsi.processor - INFO - Processing text: yeah on sale
+2025-04-13 14:31:26,605 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:31:31,990 - dumsi.main - INFO - Received keyboard interrupt, shutting down
+2025-04-13 14:32:42,641 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 14:32:42,641 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 14:32:42,641 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-13 14:32:42,642 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: module 'serial' has no attribute 'Serial'
+2025-04-13 14:32:42,642 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 14:32:42,642 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 14:32:42,642 - dumsi.main - INFO - Initialized language processor
+2025-04-13 14:32:42,642 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 14:32:42,652 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:32:42,652 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:32:42,652 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:32:42,653 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:32:43,494 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 14:32:43,495 - dumsi.listener - INFO - Started speech listener
+2025-04-13 14:32:43,495 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 14:32:43,519 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 14:32:49,249 - dumsi.listener - INFO - Recognized: energy
+2025-04-13 14:32:49,249 - dumsi.processor - INFO - Processing text: energy
+2025-04-13 14:32:49,249 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:33:14,101 - dumsi.listener - INFO - Recognized: he said
+2025-04-13 14:33:14,101 - dumsi.processor - INFO - Processing text: he said
+2025-04-13 14:33:14,101 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:33:18,848 - dumsi.main - INFO - Received keyboard interrupt, shutting down
+2025-04-13 14:37:58,603 - dumsi.main - INFO - Starting Dumsi
+2025-04-13 14:37:58,603 - dumsi.main - INFO - Loaded configuration from config/config.json
+2025-04-13 14:37:58,603 - dumsi.main - INFO - Using speech model from command line: vosk
+2025-04-13 14:37:58,604 - dumsi.arduino_controller - ERROR - Failed to connect to Arduino: module 'serial' has no attribute 'Serial'
+2025-04-13 14:37:58,604 - dumsi.processor - INFO - Initialized Arduino controller
+2025-04-13 14:37:58,604 - dumsi.arduino_controller - INFO - Reset robot to default position
+2025-04-13 14:37:58,605 - dumsi.main - INFO - Initialized language processor
+2025-04-13 14:37:58,618 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:37:58,618 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:37:58,618 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:37:58,618 - dumsi.arduino_controller - WARNING - Cannot send command - not connected to Arduino
+2025-04-13 14:37:58,706 - dumsi.speaker - INFO - Initialized Speaker with pyttsx3 engine
+2025-04-13 14:37:58,706 - dumsi.main - INFO - Initialized speaker
+2025-04-13 14:37:58,706 - dumsi.listener - INFO - Loading VOSK model from: models/vosk-model-small-en-us-0.15
+2025-04-13 14:37:59,740 - dumsi.main - INFO - Initialized speech listener
+2025-04-13 14:37:59,741 - dumsi.listener - INFO - Started speech listener
+2025-04-13 14:37:59,741 - dumsi.main - INFO - Dumsi is now listening for commands
+2025-04-13 14:37:59,770 - dumsi.listener - INFO - VOSK listener is ready
+2025-04-13 14:38:03,988 - dumsi.listener - INFO - Recognized: read it here if i lived
+2025-04-13 14:38:03,988 - dumsi.processor - INFO - Processing text: read it here if i lived
+2025-04-13 14:38:03,988 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:38:08,096 - dumsi.listener - INFO - Recognized: either you but i'm not sure what to do
+2025-04-13 14:38:08,096 - dumsi.processor - INFO - Processing text: either you but i'm not sure what to do
+2025-04-13 14:38:08,096 - dumsi.listener - INFO - Response: I heard you, but I'm not sure what to do
+2025-04-13 14:38:10,602 - dumsi.main - INFO - Received keyboard interrupt, shutting down
