@@ -11,7 +11,7 @@ Servo JawServo;
 const int horizontalServoPin = 9;
 const int verticalServoPin = 10;
 const int NeckServoPin = 11;
-const int JawServoPin = 12;
+const int JawServoPin = 7;
 
 // Variables for eye positions
 int horizontalPosition = 90; // Center position horizontally
