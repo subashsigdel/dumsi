@@ -1,2 +1,19 @@
 .venv
 .idea
+# Rasa
+.rasa/
+models/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.Python
+env/
+venv/
+.venv/
+
+# Other
+*.log
+*.env
+.DS_Store
