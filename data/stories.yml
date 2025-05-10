@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: greet and ask for song
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sing_song
+  - action: utter_sing_song
+
+- story: ask for nepali culture
+  steps:
+  - intent: nepali_culture
+  - action: utter_nepali_culture
+  
+- story: ask for nepali story
+  steps:
+  - intent: tell_story
+  - action: utter_tell_story
+
+- story: ask for nepali mountains
+  steps:
+  - intent: nepali_mountains
+  - action: utter_nepali_mountains
+
+- story: ask for nepali people
+  steps:
+  - intent: nepali_people
+  - action: utter_nepali_people
+
+- story: ask for nepali history
+  steps:
+  - intent: nepali_history
+  - action: utter_nepali_history
+

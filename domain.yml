@@ -1,0 +1,64 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - sing_song
+  - tell_story
+  - nepali_history
+  - nepali_culture
+  - nepali_mountains
+  - nepali_people
+
+
+responses:
+  utter_greet:
+    - text: "Namaste! Kasto cha? Ma Rasa chatbot ho."
+
+  utter_goodbye:
+    - text: "Pheri bhetaula! Ramailo lagyo kura garera."
+
+  utter_sing_song:
+    - text: "🎵 Resham firiri, resham firiri... udaudaichhu ma hajur resham firiri 🎵"
+
+  utter_tell_story:
+    - text: |
+        Ekpalta ko kura ho... ek jana ghumantey le nepal ghumda sabai bhanda ramailo tyo himal ma paayo...
+
+  utter_nepali_history:
+    - text: |
+        Nepal has a long history dating back thousands of years. It became a republic in 2008 after ending the monarchy.
+
+  utter_nepali_culture:
+    - text: |
+        Nepali culture is diverse with festivals like Dashain, Tihar, and traditions from different ethnic groups.
+
+  utter_nepali_mountains:
+    - text: |
+        Nepal is home to 8 of the 14 highest peaks in the world, including Mt. Everest (Sagarmatha), the tallest of all.
+
+  utter_nepali_people:
+    - text: |
+        Nepali people are known for their hospitality, bravery (Gurkhas), and cultural diversity across the country.
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_iamabot:
+  - text: "I am a deku, powered by subash."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
