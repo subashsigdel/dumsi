@@ -15,49 +15,48 @@ intents:
   - nepali_mountains
   - nepali_people
 
-
 responses:
   utter_greet:
-    - text: "Namaste! Kasto cha? Ma Rasa chatbot ho."
+    - text: "नमस्ते! कस्तो छ? म रासा च्याटबोट हुँ।"
 
   utter_goodbye:
-    - text: "Pheri bhetaula! Ramailo lagyo kura garera."
+    - text: "फेरि भेटौँला! रमाइलो लाग्यो कुरा गरेर।"
 
   utter_sing_song:
-    - text: "🎵 Resham firiri, resham firiri... udaudaichhu ma hajur resham firiri 🎵"
+    - text: "🎵 रेशम फिरिरी, रेशम फिरिरी... उडाउँदैछु म हजुर, रेशम फिरिरी 🎵"
 
   utter_tell_story:
     - text: |
-        Ekpalta ko kura ho... ek jana ghumantey le nepal ghumda sabai bhanda ramailo tyo himal ma paayo...
+        एकपल्टको कुरा हो... एक जना घुमन्तेले नेपाल घुम्दा सबैभन्दा रमाइलो त्यो हिमालमा पायो...
 
   utter_nepali_history:
     - text: |
-        Nepal has a long history dating back thousands of years. It became a republic in 2008 after ending the monarchy.
+        नेपालको इतिहास हजारौँ वर्ष पुरानो छ। २००८ मा राजतन्त्र अन्त्य गरी गणतन्त्र घोषणा गरिएको हो।
 
   utter_nepali_culture:
     - text: |
-        Nepali culture is diverse with festivals like Dashain, Tihar, and traditions from different ethnic groups.
+        नेपाली संस्कृति विविध छ, जस्तै दशैं, तिहार लगायत विभिन्न जातजातिको परम्परा।
 
   utter_nepali_mountains:
     - text: |
-        Nepal is home to 8 of the 14 highest peaks in the world, including Mt. Everest (Sagarmatha), the tallest of all.
+        नेपालमा विश्वकै १४ वटा अग्ला हिमालमध्ये ८ वटा छन्, जसमा सगरमाथा (माउण्ट एभरेस्ट) सबैभन्दा अग्लो हो।
 
   utter_nepali_people:
     - text: |
-        Nepali people are known for their hospitality, bravery (Gurkhas), and cultural diversity across the country.
+        नेपालीहरू अतिथिप्रेमी, साहसी (गोरखा) र सांस्कृतिक विविधताले भरिपूर्ण छन्।
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "तपाईंलाई खुशी पार्नको लागि केही यहाँ छ:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "के त्यसले तपाईंलाई सहायता गर्‍यो?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "धेरै राम्रो, यस्तै गरिरहनुहोस्!"
 
   utter_iamabot:
-  - text: "I am a deku, powered by subash."
+    - text: "म डेकु हुँ, सुभाषले बनाएको च्याटबोट।"
 
 session_config:
   session_expiration_time: 60

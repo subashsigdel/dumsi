@@ -17,6 +17,8 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - k cha
+    - kasto xau
 
 - intent: goodbye
   examples: |
@@ -34,6 +36,8 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - feri bhetam la
+    - bholi bhetam la
 
 - intent: affirm
   examples: |
@@ -43,6 +47,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ho
 
 - intent: deny
   examples: |
@@ -53,6 +58,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - haina
 
 - intent: mood_great
   examples: |
@@ -69,6 +75,8 @@ nlu:
     - extremely good
     - so so perfect
     - so good
+    - ma kushi xu
+    - malai ramro lagyo
     - so perfect
 
 - intent: mood_unhappy
@@ -86,6 +94,8 @@ nlu:
     - not very good
     - extremly sad
     - so saad
+    - ma dukhi xu
+    - malai naramro lagyo
     - so sad
 
 - intent: bot_challenge
@@ -94,6 +104,9 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - ko ho tmi?
+    - tmro naam k ho?
+    - what is your name?
 
 
 - intent: sing_song
