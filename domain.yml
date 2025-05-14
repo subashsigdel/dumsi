@@ -56,8 +56,8 @@ responses:
     - text: "धेरै राम्रो, यस्तै गरिरहनुहोस्!"
 
   utter_iamabot:
-    - text: "म डेकु हुँ, सुभाषले बनाएको च्याटबोट।"
-
+    - text: "म डेकु हुँ, सुभाषले बनाएको बोट हुँ ।"
+    
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

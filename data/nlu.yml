@@ -100,6 +100,7 @@ nlu:
 
 - intent: bot_challenge
   examples: |
+    - ko ho
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
@@ -107,42 +108,55 @@ nlu:
     - ko ho tmi?
     - tmro naam k ho?
     - what is your name?
+    - who are you?
 
 
 - intent: sing_song
   examples: |
+    - geet sunau
+    - nepali geet sunau
     - can you sing a song
     - euta geet sunau na
     - please sing
     - gau na
+    - geet
 
 - intent: tell_story
   examples: |
     - tell me a story
     - ekta katha sunau na
     - story sunna man cha
+    - say a story
 
 - intent: nepali_history
   examples: |
+    - nepal ko bare ma vana
     - tell me about nepali history
     - nepal ko itihaas ke ho
     - when did Nepal become a republic
+    - nepali history
 
 - intent: nepali_culture
   examples: |
+    - Nepal ko bare ma vana
     - what is nepali culture
     - nepal ma kasto sanskriti cha
+    - Nepali culture
     - culture bhaneko ke ho
 
 - intent: nepali_mountains
   examples: |
+    - Nepal ko bare ma vana
     - tell me about the himalayas
     - everest ko barema bhana
     - mountains in Nepal
+    - nepali mountain
 
 - intent: nepali_people
   examples: |
+    - nepal ko bare ma vana
     - who are nepali people
+    - nepali people
     - nepal ka manche haru kasto hunchan
     - nepali people describe garna
 
