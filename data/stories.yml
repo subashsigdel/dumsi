@@ -61,3 +61,37 @@ stories:
   - intent: nepali_history
   - action: utter_nepali_history
 
+- story: ask for time
+  steps:
+  - intent: ask_time
+  - action: utter_ask_time
+
+- story: ask for weather
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_weather
+
+- story: ask for thank
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- story: ask for joke
+  steps:
+  - intent: request_joke
+  - action: utter_thank
+
+- story: ask for festival
+  steps:
+  - intent: ask_festival
+  - action: utter_ask_festival
+
+- story: ask for food
+  steps:
+  - intent: ask_food
+  - action: utter_ask_food
+
+- story: ask for travel advice
+  steps:
+  - intent: ask_travel_advice
+  - action: utter_ask_travel_advice
