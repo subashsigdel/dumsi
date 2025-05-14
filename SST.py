@@ -18,13 +18,13 @@ def get_voice_input():
 
     try:
         text = r.recognize_google(audio, language="ne-NP")
-        print(f"🗣️ You said: {text}")
+        print(f"You said: {text}")
         return text
     except sr.UnknownValueError:
-        print("❌ Could not understand audio.")
+        print("Could not understand audio.")
         return None
     except sr.RequestError as e:
-        print(f"⚠️ Google STT error: {e}")
+        print(f"Google STT error: {e}")
         return None
 
 # Function to send user input to the Rasa bot and get a response
@@ -34,9 +34,9 @@ def send_to_rasa(message):
         responses = response.json()
         if responses:
             bot_reply = responses[0].get("text", "")
-            print(f"🤖 Rasa says: {bot_reply}")
+            print(f"Rasa says: {bot_reply}")
             return bot_reply
-    print("❌ No response from Rasa")
+    print("No response from Rasa")
     return "मलाई केही थाहा भएन।"
 
 # Function to convert the text response to speech and play it

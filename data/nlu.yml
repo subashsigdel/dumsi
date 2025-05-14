@@ -100,6 +100,7 @@ nlu:
 
 - intent: bot_challenge
   examples: |
+    - ko ho
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
@@ -107,42 +108,118 @@ nlu:
     - ko ho tmi?
     - tmro naam k ho?
     - what is your name?
+    - who are you?
 
 
 - intent: sing_song
   examples: |
+    - geet sunau
+    - nepali geet sunau
     - can you sing a song
     - euta geet sunau na
     - please sing
     - gau na
+    - geet
 
 - intent: tell_story
   examples: |
     - tell me a story
     - ekta katha sunau na
     - story sunna man cha
+    - say a story
 
 - intent: nepali_history
   examples: |
+    - nepal ko bare ma vana
     - tell me about nepali history
     - nepal ko itihaas ke ho
     - when did Nepal become a republic
+    - nepali history
 
 - intent: nepali_culture
   examples: |
+    - Nepal ko bare ma vana
     - what is nepali culture
     - nepal ma kasto sanskriti cha
+    - Nepali culture
     - culture bhaneko ke ho
 
 - intent: nepali_mountains
   examples: |
+    - Nepal ko bare ma vana
     - tell me about the himalayas
     - everest ko barema bhana
     - mountains in Nepal
+    - nepali mountain
 
 - intent: nepali_people
   examples: |
+    - nepal ko bare ma vana
     - who are nepali people
+    - nepali people
     - nepal ka manche haru kasto hunchan
     - nepali people describe garna
 
+- intent: ask_time
+  examples: |
+    - kati bajyo?
+    - what time is it?
+    - tell me the time
+    - aba kati bajyo?
+    - current time k ho?
+
+- intent: ask_weather
+  examples: |
+    - weather kasto cha?
+    - what's the weather like?
+    - is it raining?
+    - aaja ko mausam kasto cha?
+    - tell me today's weather
+
+- intent: ask_location
+  examples: |
+    - tapaiko location k ho?
+    - where are you?
+    - where is your location?
+    - timi kata chau?
+    - bot kaha bata ho?
+
+- intent: thank
+  examples: |
+    - dhanyabad
+    - thank you
+    - thanks a lot
+    - ramailo lagyo, dhanyabad
+    - cheers
+
+- intent: request_joke
+  examples: |
+    - kehi jota sunauna
+    - tell me a joke
+    - make me laugh
+    - joke sunau na
+    - funny kura gara
+
+- intent: ask_festival
+  examples: |
+    - nepali chad haru ke ke chan?
+    - festivals in nepal
+    - what are the main nepali festivals?
+    - dashain and tihar ke ho?
+    - nepal ko famous festival
+
+- intent: ask_food
+  examples: |
+    - popular nepali food k ho?
+    - nepali khana ke ho?
+    - momo kina popular cha?
+    - best food in nepal
+    - tell me about nepali dishes
+
+- intent: ask_travel_advice
+  examples: |
+    - where should I visit in Nepal?
+    - nepal ma ghumna kaha janey?
+    - travel suggestion dinus
+    - best place to visit in nepal
+    - tourist place in nepal
