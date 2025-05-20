@@ -95,3 +95,28 @@ stories:
   steps:
   - intent: ask_travel_advice
   - action: utter_ask_travel_advice
+
+- story: ask about high tech pioneer
+  steps:
+  - intent: ask_hitech
+  - action: utter_ask_hitech
+
+- story: ask about muni sakya
+  steps:
+  - intent: ask_munisakya
+  - action: utter_ask_munisakya
+
+- story: ask about Ram
+  steps:
+  - intent: ask_ram
+  - action: utter_ask_ram
+
+- story: ask about kanxa
+  steps:
+  - intent: ask_kanxa
+  - action: utter_ask_kanxa
+
+- story: ask about subash
+  steps:
+  - intent: ask_subash
+  - action: utter_ask_subash

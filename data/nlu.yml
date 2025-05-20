@@ -223,3 +223,38 @@ nlu:
     - travel suggestion dinus
     - best place to visit in nepal
     - tourist place in nepal
+
+- intent: ask_hitech
+  examples: |
+    - what is high tech
+    - high tech ko barema vana
+    - high tech kasle banako
+    - high tech k ho
+
+- intent: ask_munisakya
+  examples: |
+    - who is munisakhya
+    - muni sakya ko barema vana
+    - muni sakya ko ho
+    - muni sakya
+
+- intent: ask_ram
+  examples: |
+    - who is ram
+    - ram ko barema vana
+    - ram ko ho
+    - ram tamang
+
+- intent: ask_kanxa
+  examples: |
+    - who is kanxa
+    - kanxa ko barema vana
+    - kanxa ko ho
+    - kanxa tamang
+
+- intent: ask_subash
+  examples: |
+    - who is subash
+    - subash ko barema vana
+    - subash ko ho
+    - subash sigdel

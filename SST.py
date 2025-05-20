@@ -12,7 +12,7 @@ AUDIO_FILE = "user_input.wav"
 def get_voice_input():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("🎤 Speak now...")
+        print("Speak now...")
         r.adjust_for_ambient_noise(source)
         audio = r.listen(source)
 
