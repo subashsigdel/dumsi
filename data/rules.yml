@@ -1,3 +1,4 @@
+
 rules:
 
 - rule: Respond to greeting
@@ -45,4 +46,12 @@ rules:
   - intent: nlu_fallback
   - action: action_wikipedia_fallback
 
+
+
+version: "3.1"
+rules:
+- rule: Say name when asked
+  steps:
+    - intent: ask_name
+    - action: utter_bot_name
 
