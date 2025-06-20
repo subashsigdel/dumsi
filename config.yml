@@ -4,7 +4,7 @@ recipe: default.v1
 
 # The assistant project unique identifier
 # This default value must be replaced with a unique assistant name within your deployment
-assistant_id: 20250509-181431-refined-vial
+assistant_id: 20250620-060502-burgundy-weight
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
@@ -35,7 +35,7 @@ pipeline: null
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
-policies: null
+
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
@@ -48,3 +48,16 @@ policies: null
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
+
+policies:
+  - name: RulePolicy
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+  - name: FallbackPolicy
+    fallback_action_name: "action_wikipedia_fallback"
+    core_threshold: 0.3
+    nlu_threshold: 0.3
+
+

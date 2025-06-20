@@ -1,13 +1,48 @@
-version: "3.1"
-
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Respond to greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Respond to question about Muni Sakya
+  steps:
+  - intent: ask_munisakya
+  - action: utter_ask_munisakya
+
+- rule: Respond to question about HighTech Pioneer
+  steps:
+  - intent: ask_hitech
+  - action: utter_ask_hitech
+
+- rule: Respond to question about Nepali history
+  steps:
+  - intent: nepali_history
+  - action: utter_nepali_history
+
+- rule: Respond to question about Nepali culture
+  steps:
+  - intent: nepali_culture
+  - action: utter_nepali_culture
+
+- rule: Respond to question about Nepali mountains
+  steps:
+  - intent: nepali_mountains
+  - action: utter_nepali_mountains
+
+- rule: Respond to question about Nepali people
+  steps:
+  - intent: nepali_people
+  - action: utter_nepali_people
+
+- rule: Respond to goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Fallback for unknown inputs → Wikipedia
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: nlu_fallback
+  - action: action_wikipedia_fallback
+
+
