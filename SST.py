@@ -16,7 +16,11 @@ def get_voice_input():
         audio = recognizer.listen(source)
 
     try:
+
+        text = r.recognize_google(audio, language="en")
+
         text = recognizer.recognize_google(audio, language="ne-NP")
+
         print(f"You said: {text}")
         return text
     except sr.UnknownValueError:

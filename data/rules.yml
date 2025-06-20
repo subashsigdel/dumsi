@@ -1,6 +1,57 @@
+
+rules:
+
+- rule: Respond to greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Respond to question about Muni Sakya
+  steps:
+  - intent: ask_munisakya
+  - action: utter_ask_munisakya
+
+- rule: Respond to question about HighTech Pioneer
+  steps:
+  - intent: ask_hitech
+  - action: utter_ask_hitech
+
+- rule: Respond to question about Nepali history
+  steps:
+  - intent: nepali_history
+  - action: utter_nepali_history
+
+- rule: Respond to question about Nepali culture
+  steps:
+  - intent: nepali_culture
+  - action: utter_nepali_culture
+
+- rule: Respond to question about Nepali mountains
+  steps:
+  - intent: nepali_mountains
+  - action: utter_nepali_mountains
+
+- rule: Respond to question about Nepali people
+  steps:
+  - intent: nepali_people
+  - action: utter_nepali_people
+
+- rule: Respond to goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Fallback for unknown inputs → Wikipedia
+  steps:
+  - intent: nlu_fallback
+  - action: action_wikipedia_fallback
+
+
+
 version: "3.1"
 rules:
 - rule: Say name when asked
   steps:
     - intent: ask_name
     - action: utter_bot_name
+
