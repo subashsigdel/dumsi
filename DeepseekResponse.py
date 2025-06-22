@@ -27,7 +27,7 @@ def Response(question):
     })
   )
 
-  # Print the actual AI response
+  # Print response
   if response.status_code == 200:
       result = response.json()
       message = result['choices'][0]['message']['content']

@@ -26,9 +26,9 @@ intents:
   - ask_ram
   - ask_kanxa
   - ask_subash
+  - nlu_fallback
 actions:
-  - action_llm_fallback
-  - action_wikipedia_fallback
+  - action_deepseek_fallback
 
 
 responses:

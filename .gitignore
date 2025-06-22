@@ -5,6 +5,13 @@ __pycache__/
 *.pyd
 *.pkl
 
+<<<<<<< HEAD
+# Other
+*.log
+*.env
+.DS_Store
+.api
+=======
 # Virtual environment
 rasa/
 
@@ -23,3 +30,4 @@ feedback_log.jsonl
 # OS-specific
 .DS_Store
 Thumbs.db
+>>>>>>> d5d01d2f219e87927edbe0a17cd885d89281c4af

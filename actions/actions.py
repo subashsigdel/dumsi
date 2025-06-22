@@ -2,33 +2,51 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-import wikipedia
+from dotenv import load_dotenv
+import requests
+import json
+import os
 
-class ActionWikipediaFallback(Action):
+load_dotenv()
+api_key = os.getenv("OPENROUTER_API_KEY")
+
+class ActionDeepSeekFallback(Action):
 
     def name(self) -> Text:
-        return "action_wikipedia_fallback"
+        return "action_deepseek_fallback"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        user_message = tracker.latest_message.get('text')
+
+        user_input = tracker.latest_message.get('text')
 
         try:
-            # Search Wikipedia and get a summary (first 2 sentences)
-            summary = wikipedia.summary(user_message, sentences=2)
-            dispatcher.utter_message(text=summary)
-        except wikipedia.DisambiguationError as e:
-            # If multiple topics found, pick the first option
-            option = e.options[0]
-            try:
-                summary = wikipedia.summary(option, sentences=2)
-                dispatcher.utter_message(text=summary)
-            except Exception:
-                dispatcher.utter_message(text="माफ गर्नुहोस्, त्यो विषयमा मैले जानकारी पाइनँ।")
-        except Exception:
-            dispatcher.utter_message(text="माफ गर्नुहोस्, त्यो विषयमा मैले जानकारी पाइनँ।")
+            response = requests.post(
+                url="https://openrouter.ai/api/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                data=json.dumps({
+                    "model": "deepseek/deepseek-chat-v3-0324:free",
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": f"give answer in one or two sentences in Romanized English of nepali: {user_input}?"
+                        }
+                    ],
+                })
+            )
+
+            if response.status_code == 200:
+                message = response.json()['choices'][0]['message']['content']
+                dispatcher.utter_message(text=message)
+            else:
+                dispatcher.utter_message(text="Sorry, I couldn't understand and fetch an answer.")
+
+        except Exception as e:
+            dispatcher.utter_message(text=f"An error occurred: {str(e)}")
 
         return []
 

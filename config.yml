@@ -52,15 +52,19 @@ pipeline: null
 
 policies:
   - name: RulePolicy
-  - name: MemoizationPolicy
-  - name: TEDPolicy
-    max_history: 5
-    epochs: 100
-  - name: FallbackPolicy
-    fallback_action_name: "action_wikipedia_fallback"
-    core_threshold: 0.3
-    nlu_threshold: 0.3
+    core_fallback_action_name: "action_deepseek_fallback"
+    core_fallback_threshold: 0.3
+    enable_fallback_prediction: true
 
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: CountVectorsFeaturizer
+  - name: DIETClassifier
+    epochs: 100
+  - name: FallbackClassifier
+    threshold: 0.4
+    ambiguity_threshold: 0.1
+  - name: EntitySynonymMapper
 
 
 assistant_id: 20250509-181431-refined-vial
