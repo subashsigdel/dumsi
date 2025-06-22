@@ -1,5 +1,4 @@
 version: "3.1"
-
 intents:
   - greet
   - goodbye
@@ -224,6 +223,14 @@ responses:
   utter_ask_subash:
     - text: "र्‍हाँ मलाई बनाउने विकासकर्ताहरू मध्ये एक हुनुहुन्छ।"
   
+
+
+responses:
+  utter_greet:
+    - text: "नमस्ते! म पाण्डा हुँ, तपाईंको साथी।"
+  utter_bot_name:
+    - text: "म पाण्डा हुँ।"
+
 
 session_config:
   session_expiration_time: 3600

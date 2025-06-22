@@ -1,20 +1,33 @@
-.venv
-.idea
-# Rasa
-.rasa/
-models/
-
 # Python
 __pycache__/
-*.py[cod]
 *.pyc
-.Python
-env/
-venv/
-.venv/
+*.pyo
+*.pyd
+*.pkl
 
+<<<<<<< HEAD
 # Other
 *.log
 *.env
 .DS_Store
 .api
+=======
+# Virtual environment
+rasa/
+
+# RASA specific
+.rasa/
+models/
+output.wav
+feedback_log.jsonl
+
+# IDE files
+.idea/
+
+# Jupyter
+*.ipynb_checkpoints/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+>>>>>>> d5d01d2f219e87927edbe0a17cd885d89281c4af

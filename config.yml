@@ -4,6 +4,7 @@ recipe: default.v1
 
 # The assistant project unique identifier
 # This default value must be replaced with a unique assistant name within your deployment
+
 assistant_id: 20250620-060502-burgundy-weight
 
 # Configuration for Rasa NLU.
@@ -64,4 +65,21 @@ pipeline:
     threshold: 0.4
     ambiguity_threshold: 0.1
   - name: EntitySynonymMapper
+
+
+assistant_id: 20250509-181431-refined-vial
+language: "ne"
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: DIETClassifier
+    epochs: 50
+  - name: EntitySynonymMapper
+policies:
+  - name: RulePolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 50
 

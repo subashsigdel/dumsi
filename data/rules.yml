@@ -1,3 +1,4 @@
+
 rules:
 
 - rule: Respond to greeting
@@ -42,5 +43,20 @@ rules:
 
 - rule: Fallback to DeepSeek when NLU confidence is low
   steps:
+<<<<<<< HEAD
     - intent: nlu_fallback
     - action: action_deepseek_fallback
+=======
+  - intent: nlu_fallback
+  - action: action_wikipedia_fallback
+
+
+
+version: "3.1"
+rules:
+- rule: Say name when asked
+  steps:
+    - intent: ask_name
+    - action: utter_bot_name
+
+>>>>>>> d5d01d2f219e87927edbe0a17cd885d89281c4af
