@@ -44,14 +44,9 @@ rules:
 - rule: Fallback to DeepSeek when NLU confidence is low
   steps:
   - intent: nlu_fallback
-  - action: action_wikipedia_fallback
+  - action: action_deepseek_fallback
 
 
 
 version: "3.1"
-rules:
-- rule: Say name when asked
-  steps:
-    - intent: ask_name
-    - action: utter_bot_name
 

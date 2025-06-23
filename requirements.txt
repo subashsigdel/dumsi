@@ -4,4 +4,4 @@ speechrecognition
 edge-tts
 sounddevice
 soundfile
-rasa
+# rasa
