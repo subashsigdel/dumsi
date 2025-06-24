@@ -53,7 +53,7 @@ language: en
 policies:
   - name: RulePolicy
     core_fallback_action_name: "action_deepseek_fallback"
-    core_fallback_threshold: 0.80
+    core_fallback_threshold: 0.1
     enable_fallback_prediction: true
 
 pipeline:
@@ -62,7 +62,7 @@ pipeline:
   - name: DIETClassifier
     epochs: 100
   - name: FallbackClassifier
-    threshold: 0.4
+    threshold: 0.2
     ambiguity_threshold: 0.1
   - name: EntitySynonymMapper
 

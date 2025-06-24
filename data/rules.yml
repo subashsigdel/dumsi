@@ -1,3 +1,4 @@
+version: "3.1"
 
 rules:
 
@@ -5,6 +6,11 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
+
+- rule: Respond to goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
 
 - rule: Respond to question about Muni Sakya
   steps:
@@ -36,17 +42,92 @@ rules:
   - intent: nepali_people
   - action: utter_nepali_people
 
-- rule: Respond to goodbye
+- rule: Respond to question about food
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: ask_food
+  - action: utter_ask_food
+
+- rule: Respond to question about location
+  steps:
+  - intent: ask_location
+  - action: utter_ask_location
+
+- rule: Respond to question about weather
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_weather
+
+- rule: Respond to question about time
+  steps:
+  - intent: ask_time
+  - action: utter_ask_time
+
+- rule: Respond to travel advice
+  steps:
+  - intent: ask_travel_advice
+  - action: utter_ask_travel_advice
+
+- rule: Respond to festival question
+  steps:
+  - intent: ask_festival
+  - action: utter_ask_festival
+
+- rule: Respond to joke request
+  steps:
+  - intent: request_joke
+  - action: utter_request_joke
+
+- rule: Respond to thanks
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- rule: Respond to ask_ram
+  steps:
+  - intent: ask_ram
+  - action: utter_ask_ram
+
+- rule: Respond to ask_kanxa
+  steps:
+  - intent: ask_kanxa
+  - action: utter_ask_kanxa
+
+- rule: Respond to ask_subash
+  steps:
+  - intent: ask_subash
+  - action: utter_ask_subash
+
+- rule: Respond to bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Respond to ask_name
+  steps:
+  - intent: ask_name
+  - action: utter_bot_name
 
 - rule: Fallback to DeepSeek when NLU confidence is low
   steps:
   - intent: nlu_fallback
   - action: action_deepseek_fallback
+  
+- rule: Respond to affirm
+  steps:
+  - intent: affirm
+  - action: utter_happy
 
+- rule: Respond to deny
+  steps:
+  - intent: deny
+  - action: utter_did_that_help
 
+- rule: Respond to mood great
+  steps:
+  - intent: mood_great
+  - action: utter_happy
 
-version: "3.1"
-
+- rule: Respond to mood unhappy
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
